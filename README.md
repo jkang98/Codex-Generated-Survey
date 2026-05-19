@@ -26,7 +26,6 @@ multi-list recommendation surface.
 | --- | --- | --- | --- |
 | 2023 | [Multi-list interfaces for recommender systems: survey and future directions](https://doi.org/10.3389/fdata.2023.1239705) | Frontiers in Big Data | The most directly relevant survey for carousel and multi-list recommender interfaces. |
 | 2023 | [Deep Reinforcement Learning in Recommender Systems: A Survey and New Perspectives](https://doi.org/10.1016/j.knosys.2023.110335) | Knowledge-Based Systems | Broad RL-for-recommendation context, including long-term optimization beyond one-step prediction. |
-| 2023 | [Impression-Aware Recommender Systems](https://arxiv.org/abs/2308.07857) | arXiv | Useful background for logged impressions/exposures, which are essential for slate and page-level evaluation. |
 
 ## 1D Lists & Rankings
 
@@ -35,17 +34,13 @@ multi-list recommendation surface.
 | Year | Paper | Venue | Main idea |
 | --- | --- | --- | --- |
 | 2018 | [Beyond Greedy Ranking: Slate Optimization via List-CVAE](https://arxiv.org/abs/1803.01682) | ICLR 2019 | Directly generates complete slates with a conditional VAE instead of greedily sorting item scores. |
-| 2018 | [Seq2Slate: Re-ranking and Slate Optimization with RNNs](https://arxiv.org/abs/1810.02019) | arXiv / OpenReview | Uses a pointer-network style sequence model to choose a slate item by item while conditioning on previous choices. |
 | 2021 | [Variation Control and Evaluation for Generative Slate Recommendations](https://arxiv.org/abs/2102.13302) | WWW | Shuchang Liu et al.; studies generative slate recommendation and adds variation metrics beyond accuracy for stochastic slate generators. |
 | 2021 | [Conditional Sequential Slate Optimization](https://arxiv.org/abs/2108.05618) | SIGIR eCom | Re-ranks candidates into a slate while jointly optimizing ranking quality and composition constraints. |
-| 2021 | [Combining Reward and Rank Signals for Slate Recommendation](https://arxiv.org/abs/2107.12455) | arXiv | Probabilistic slate model that uses both whether the slate received a reward and which rank was selected. |
 | 2022 | [Dynamic Slate Recommendation with Gated Recurrent Units and Thompson Sampling](https://arxiv.org/abs/2104.15046) | Data Mining and Knowledge Discovery | Models slate exposure explicitly and introduces in-slate Thompson sampling for exploration. |
 | 2023 | [Exploration and Regularization of the Latent Action Space in Recommendation](https://arxiv.org/abs/2302.03431) | WWW | Shuchang Liu et al.; decomposes list action generation into latent hyper-actions and item-list selection for RL-based recommendation. |
 | 2023 | [Generative Slate Recommendation with Reinforcement Learning](https://arxiv.org/abs/2301.08632) | WSDM | Learns to generate slates with RL under the combinatorial action-space challenge. |
 | 2023 | [Generative Flow Network for Listwise Recommendation](https://arxiv.org/abs/2306.02239) | KDD | Uses GFlowNets to generate diverse high-reward recommendation lists. |
 | 2023 | [Slate-Aware Ranking for Recommendation](https://arxiv.org/abs/2302.12427) | WSDM | Brings slate-level relationships into the ranking stage before the final re-ranker. |
-| 2024 | [Diffusion Model for Slate Recommendation](https://arxiv.org/abs/2408.06883) | arXiv | Models the joint distribution of items in a slate and supports multi-item user engagement. |
-| 2024 | [Hierarchical Reinforcement Learning for Temporal Abstraction of Listwise Recommendation](https://arxiv.org/abs/2409.07416) | arXiv | Uses hierarchical RL to separate long-term perception from short-term list construction. |
 | 2024 | [Learned Ranking Function: From Short-term Behavior Predictions to Long-term User Satisfaction](https://arxiv.org/abs/2408.06512) | RecSys | YouTube system that learns a ranking function for slate-level long-term satisfaction. |
 
 ### Re-ranking and Listwise Context Models
@@ -57,7 +52,6 @@ multi-list recommendation surface.
 | 2019 | [Learning Groupwise Multivariate Scoring Functions Using Deep Neural Networks](https://arxiv.org/abs/1811.04415) | ICTIR | Scores documents/items in groups to capture cross-item effects. |
 | 2020 | [SetRank: Learning a Permutation-Invariant Ranking Model for Information Retrieval](https://arxiv.org/abs/1912.05891) | SIGIR | Set-based ranking model that captures cross-document interactions without depending on input order. |
 | 2024 | [Utility-Oriented Reranking with Counterfactual Context](https://doi.org/10.1145/3671004) | ACM TKDD | Optimizes list utility by reasoning about the counterfactual context after re-ranking. |
-| 2024 | [Beyond Positive History: Re-ranking with List-level Hybrid Feedback](https://arxiv.org/abs/2410.20778) | arXiv | Uses both positive and negative feedback from previously exposed lists for re-ranking. |
 
 ### Kuaishou and Shuchang Liu: Generative Reranking and Large Rankers
 
@@ -66,13 +60,8 @@ multi-list recommendation surface.
 | 2024 | [Discrete Conditional Diffusion for Reranking in Recommendation](https://arxiv.org/abs/2308.06982) | WWW Companion | Kuaishou diffusion reranker that generates item permutations under user-response conditions. |
 | 2024 | [Non-autoregressive Generative Models for Reranking Recommendation](https://arxiv.org/abs/2402.06871) | KDD | Kuaishou NAR4Rec system that generates whole reranked sequences in parallel for industrial latency. |
 | 2025 | [Comprehensive List Generation for Multi-Generator Reranking](https://arxiv.org/abs/2504.15625) | SIGIR | Shuchang Liu et al.; learns complementary generators and optimizes list comprehensiveness for multi-generator reranking. |
-| 2025 | [From Generation to Consumption: Personalized List Value Estimation for Re-ranking](https://arxiv.org/abs/2508.02242) | arXiv | Shuchang Liu et al.; estimates consumed list value by modeling user exit probabilities and sub-list rewards. |
 | 2025 | [GoalRank: Group-Relative Optimization for a Large Ranking Model](https://arxiv.org/abs/2509.22046) | ICLR 2026 | Shuchang Liu et al.; trains a generator-only large ranker with group-relative optimization over recommendation lists. |
 | 2026 | [Denoising Neural Reranker for Recommender Systems](https://arxiv.org/abs/2509.18736) | ICLR 2026 | Shuchang Liu et al.; treats reranking as denoising retriever scores before refining the exposed item list. |
-| 2026 | [FlashEvaluator: Expanding Search Space with Parallel Evaluation](https://arxiv.org/abs/2603.02565) | arXiv | Kuaishou evaluator that compares multiple generated sequences in one forward pass and selects better ranked lists. |
-| 2026 | [Dual-Rerank: Fusing Causality and Utility for Industrial Generative Reranking](https://arxiv.org/abs/2604.07420) | arXiv | Kuaishou industrial reranker for whole-page utility, combining AR-to-NAR distillation with list-wise RL optimization. |
-| 2026 | [From Local Indices to Global Identifiers: Generative Reranking for Recommender Systems via Global Action Space](https://arxiv.org/abs/2604.25291) | arXiv | Shuchang Liu et al.; reformulates listwise reranking as generation over global item identifiers and optimizes listwise utility. |
-| 2026 | [UniRank: Unified List-wise Reranking via Confidence-Ordered Denoising](https://arxiv.org/abs/2605.10527) | arXiv | Shuchang Liu et al.; unifies autoregressive and non-autoregressive reranking with bidirectional ordered-slate denoising. |
 
 ### Bandits, RL, and Off-policy Evaluation for Slates
 
@@ -84,7 +73,6 @@ multi-list recommendation surface.
 | 2019 | [SlateQ: A Tractable Decomposition for Reinforcement Learning with Recommendation Sets](https://doi.org/10.24963/ijcai.2019/360) | IJCAI | Decomposes long-term value of a slate into item-level values under a user-choice model. |
 | 2021 | [Top-K Contextual Bandits with Equity of Exposure](https://doi.org/10.1145/3460231.3474248) | RecSys | Top-k contextual bandits with exposure fairness constraints. |
 | 2023 | [Combinatorial Categorized Bandits with Expert Rankings](https://www.microsoft.com/en-us/research/publication/combinatorial-categorized-bandits-with-expert-rankings/) | UAI | Aggregates expert/category rankings into a short top-k list under combinatorial bandit objectives. |
-| 2024 | [Neural Combinatorial Clustered Bandits for Recommendation Systems](https://arxiv.org/abs/2410.14586) | arXiv | Neural contextual combinatorial bandit for recommending item subsets. |
 
 ### Kuaishou and Shuchang Liu: Request-level, Retention, and Long-term RL
 
@@ -108,7 +96,6 @@ multi-list recommendation surface.
 | 2012 | [Determinantal Point Processes for Machine Learning](https://arxiv.org/abs/1207.6083) | Foundations and Trends in ML | Core DPP reference used by many diverse slate/list recommenders. |
 | 2018 | [Practical Diversified Recommendations on YouTube with Determinantal Point Processes](https://doi.org/10.1145/3269206.3272018) | CIKM | Production-scale DPP diversification for recommendation lists. |
 | 2018 | [Fast Greedy MAP Inference for Determinantal Point Process to Improve Recommendation Diversity](https://arxiv.org/abs/1709.05135) | NeurIPS | Scalable DPP inference for diversified top-k recommendation. |
-| 2019 | [Bandit Learning for Diversified Interactive Recommendation](https://arxiv.org/abs/1907.01647) | arXiv | Diversified contextual combinatorial bandit for interactive recommendation. |
 
 ## 2D Grids or Carousel Interfaces & Multi-slate Pages
 
@@ -127,9 +114,6 @@ multi-list recommendation surface.
 | 2021 | [Page-level Optimization of e-Commerce Item Recommendations](https://arxiv.org/abs/2108.05891) | RecSys | Optimizes item recommendation modules at page level in e-commerce. |
 | 2022 | [Automate Page Layout Optimization: An Offline Deep Q-learning Approach](https://www.amazon.science/publications/automate-page-layout-optimization-an-offline-deep-q-learning-approach) | Amazon Science | Offline RL approach for page layout optimization. |
 | 2023 | [A Bird's-eye View of Reranking: from List Level to Page Level](https://arxiv.org/abs/2211.09303) | WSDM | Page-level attentional re-ranking for multi-list recommendation pages. |
-| 2024 | [Cooperative Multi-Agent Deep Reinforcement Learning in Content Ranking Optimization](https://arxiv.org/abs/2408.04251) | arXiv | Whole-page ranking with cooperative RL agents across positions. |
-| 2025 | [KLAN: Kuaishou Landing-page Adaptive Navigator](https://arxiv.org/abs/2507.23459) | arXiv | Shuchang Liu et al.; selects personalized landing pages, tabs, channels, or aggregation pages before in-page recommendation. |
-| 2025 | [Enhanced Whole Page Optimization via Mixed-Grained Reward Mechanism-Adapted Language Models](https://arxiv.org/abs/2506.09084) | arXiv | LLM-based whole-page optimization with mixed-grained rewards. |
 
 ### Carousel, Multi-list, Shelf, and Widget Interfaces
 
@@ -144,9 +128,7 @@ multi-list recommendation surface.
 | 2021 | [Measuring the User Satisfaction in a Recommendation Interface with Multiple Carousels](https://doi.org/10.1145/3452918.3465493) | IMX | Studies satisfaction and evaluation for interfaces with multiple carousels. |
 | 2022 | [Offline Evaluation of Recommender Systems in a User Interface With Multiple Carousels](https://doi.org/10.3389/fdata.2022.910030) | Frontiers in Big Data | Proposes 2D/carousel-aware offline evaluation such as N2DCG. |
 | 2022 | [The Magic of Carousels: Single vs. Multi-List Recommender Systems](https://doi.org/10.1145/3511095.3531278) | HT | Formal and empirical analysis of why multi-list carousel interfaces can outperform single lists. |
-| 2022 | [From Ranked Lists to Carousels: A Carousel Click Model](https://arxiv.org/abs/2209.13426) | arXiv | Click model for browsing behavior in carousel recommenders. |
 | 2024 | [Towards Simulation-Based Evaluation of Recommender Systems with Carousel Interfaces](https://doi.org/10.1145/3643709) | ACM TORS | Simulates user interaction with carousel interfaces for evaluation. |
-| 2025 | [Effective Diversification of Multi-Carousel Book Recommendation](https://arxiv.org/abs/2511.14461) | arXiv | Diversification methods and metrics across multiple book recommendation carousels. |
 
 ### Interface, User Study, and Grid/Carousel Behavior Papers
 
@@ -161,8 +143,35 @@ multi-list recommendation surface.
 | 2022 | [Examining Choice Overload Across Single-List and Multi-List User Interfaces](https://ceur-ws.org/Vol-3177/paper10.pdf) | IntRS | Compares choice overload across list, grid, and carousel-style interfaces. |
 | 2023 | [How Users Ride the Carousel: Exploring the Design of Multi-List Recommender Interfaces From a User Perspective](https://doi.org/10.1145/3604915.3610638) | RecSys | User study on carousel type, length, and design in multi-list interfaces. |
 | 2023 | [Examining the User Evaluation of Multi-List Recommender Interfaces in the Context of Healthy Recipe Choices](https://doi.org/10.1145/3581930) | ACM TORS | User evaluation of multi-list recipe recommendation with personalized labels. |
-| 2025 | [RecGaze: The First Eye Tracking and User Interaction Dataset for Carousel Interfaces](https://arxiv.org/abs/2504.20792) | arXiv | Eye-tracking and interaction dataset for carousel recommender interfaces. |
-| 2025 | [Riding the Carousel: The First Extensive Eye Tracking Analysis of Browsing Behavior in Carousel Recommenders](https://arxiv.org/abs/2507.10135) | arXiv | Eye-tracking analysis of browsing behavior in carousel recommendation pages. |
+
+## arXiv Preprints and Non-peer-reviewed Papers
+
+These papers are relevant to slate, list, page, or multi-list recommendation,
+but are kept separate from the peer-reviewed conference, workshop, and journal
+papers above.
+
+| Year | Area | Paper | Main idea |
+| --- | --- | --- | --- |
+| 2018 | 1D Lists & Rankings | [Seq2Slate: Re-ranking and Slate Optimization with RNNs](https://arxiv.org/abs/1810.02019) | Uses a pointer-network style sequence model to choose a slate item by item while conditioning on previous choices. |
+| 2019 | 1D Lists & Rankings | [Bandit Learning for Diversified Interactive Recommendation](https://arxiv.org/abs/1907.01647) | Diversified contextual combinatorial bandit for interactive recommendation. |
+| 2021 | 1D Lists & Rankings | [Combining Reward and Rank Signals for Slate Recommendation](https://arxiv.org/abs/2107.12455) | Probabilistic slate model that uses both whether the slate received a reward and which rank was selected. |
+| 2022 | 2D Grids or Carousel Interfaces & Multi-slate Pages | [From Ranked Lists to Carousels: A Carousel Click Model](https://arxiv.org/abs/2209.13426) | Click model for browsing behavior in carousel recommenders. |
+| 2023 | Surveys and Background | [Impression-Aware Recommender Systems](https://arxiv.org/abs/2308.07857) | Useful background for logged impressions/exposures, which are essential for slate and page-level evaluation. |
+| 2024 | 1D Lists & Rankings | [Diffusion Model for Slate Recommendation](https://arxiv.org/abs/2408.06883) | Models the joint distribution of items in a slate and supports multi-item user engagement. |
+| 2024 | 1D Lists & Rankings | [Hierarchical Reinforcement Learning for Temporal Abstraction of Listwise Recommendation](https://arxiv.org/abs/2409.07416) | Uses hierarchical RL to separate long-term perception from short-term list construction. |
+| 2024 | 1D Lists & Rankings | [Beyond Positive History: Re-ranking with List-level Hybrid Feedback](https://arxiv.org/abs/2410.20778) | Uses both positive and negative feedback from previously exposed lists for re-ranking. |
+| 2024 | 1D Lists & Rankings | [Neural Combinatorial Clustered Bandits for Recommendation Systems](https://arxiv.org/abs/2410.14586) | Neural contextual combinatorial bandit for recommending item subsets. |
+| 2024 | 2D Grids or Carousel Interfaces & Multi-slate Pages | [Cooperative Multi-Agent Deep Reinforcement Learning in Content Ranking Optimization](https://arxiv.org/abs/2408.04251) | Whole-page ranking with cooperative RL agents across positions. |
+| 2025 | 1D Lists & Rankings | [From Generation to Consumption: Personalized List Value Estimation for Re-ranking](https://arxiv.org/abs/2508.02242) | Shuchang Liu et al.; estimates consumed list value by modeling user exit probabilities and sub-list rewards. |
+| 2025 | 2D Grids or Carousel Interfaces & Multi-slate Pages | [RecGaze: The First Eye Tracking and User Interaction Dataset for Carousel Interfaces](https://arxiv.org/abs/2504.20792) | Eye-tracking and interaction dataset for carousel recommender interfaces. |
+| 2025 | 2D Grids or Carousel Interfaces & Multi-slate Pages | [KLAN: Kuaishou Landing-page Adaptive Navigator](https://arxiv.org/abs/2507.23459) | Shuchang Liu et al.; selects personalized landing pages, tabs, channels, or aggregation pages before in-page recommendation. |
+| 2025 | 2D Grids or Carousel Interfaces & Multi-slate Pages | [Enhanced Whole Page Optimization via Mixed-Grained Reward Mechanism-Adapted Language Models](https://arxiv.org/abs/2506.09084) | LLM-based whole-page optimization with mixed-grained rewards. |
+| 2025 | 2D Grids or Carousel Interfaces & Multi-slate Pages | [Riding the Carousel: The First Extensive Eye Tracking Analysis of Browsing Behavior in Carousel Recommenders](https://arxiv.org/abs/2507.10135) | Eye-tracking analysis of browsing behavior in carousel recommendation pages. |
+| 2025 | 2D Grids or Carousel Interfaces & Multi-slate Pages | [Effective Diversification of Multi-Carousel Book Recommendation](https://arxiv.org/abs/2511.14461) | Diversification methods and metrics across multiple book recommendation carousels. |
+| 2026 | 1D Lists & Rankings | [FlashEvaluator: Expanding Search Space with Parallel Evaluation](https://arxiv.org/abs/2603.02565) | Kuaishou evaluator that compares multiple generated sequences in one forward pass and selects better ranked lists. |
+| 2026 | 1D Lists & Rankings | [Dual-Rerank: Fusing Causality and Utility for Industrial Generative Reranking](https://arxiv.org/abs/2604.07420) | Kuaishou industrial reranker for whole-page utility, combining AR-to-NAR distillation with list-wise RL optimization. |
+| 2026 | 1D Lists & Rankings | [From Local Indices to Global Identifiers: Generative Reranking for Recommender Systems via Global Action Space](https://arxiv.org/abs/2604.25291) | Shuchang Liu et al.; reformulates listwise reranking as generation over global item identifiers and optimizes listwise utility. |
+| 2026 | 1D Lists & Rankings | [UniRank: Unified List-wise Reranking via Confidence-Ordered Denoising](https://arxiv.org/abs/2605.10527) | Shuchang Liu et al.; unifies autoregressive and non-autoregressive reranking with bidirectional ordered-slate denoising. |
 
 ## Explicitly Out of Scope
 
