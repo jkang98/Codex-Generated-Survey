@@ -36,9 +36,11 @@ multi-list recommendation surface.
 | --- | --- | --- | --- |
 | 2018 | [Beyond Greedy Ranking: Slate Optimization via List-CVAE](https://arxiv.org/abs/1803.01682) | ICLR 2019 | Directly generates complete slates with a conditional VAE instead of greedily sorting item scores. |
 | 2018 | [Seq2Slate: Re-ranking and Slate Optimization with RNNs](https://arxiv.org/abs/1810.02019) | arXiv / OpenReview | Uses a pointer-network style sequence model to choose a slate item by item while conditioning on previous choices. |
+| 2021 | [Variation Control and Evaluation for Generative Slate Recommendations](https://arxiv.org/abs/2102.13302) | WWW | Shuchang Liu et al.; studies generative slate recommendation and adds variation metrics beyond accuracy for stochastic slate generators. |
 | 2021 | [Conditional Sequential Slate Optimization](https://arxiv.org/abs/2108.05618) | SIGIR eCom | Re-ranks candidates into a slate while jointly optimizing ranking quality and composition constraints. |
 | 2021 | [Combining Reward and Rank Signals for Slate Recommendation](https://arxiv.org/abs/2107.12455) | arXiv | Probabilistic slate model that uses both whether the slate received a reward and which rank was selected. |
 | 2022 | [Dynamic Slate Recommendation with Gated Recurrent Units and Thompson Sampling](https://arxiv.org/abs/2104.15046) | Data Mining and Knowledge Discovery | Models slate exposure explicitly and introduces in-slate Thompson sampling for exploration. |
+| 2023 | [Exploration and Regularization of the Latent Action Space in Recommendation](https://arxiv.org/abs/2302.03431) | WWW | Shuchang Liu et al.; decomposes list action generation into latent hyper-actions and item-list selection for RL-based recommendation. |
 | 2023 | [Generative Slate Recommendation with Reinforcement Learning](https://arxiv.org/abs/2301.08632) | WSDM | Learns to generate slates with RL under the combinatorial action-space challenge. |
 | 2023 | [Generative Flow Network for Listwise Recommendation](https://arxiv.org/abs/2306.02239) | KDD | Uses GFlowNets to generate diverse high-reward recommendation lists. |
 | 2023 | [Slate-Aware Ranking for Recommendation](https://arxiv.org/abs/2302.12427) | WSDM | Brings slate-level relationships into the ranking stage before the final re-ranker. |
@@ -68,6 +70,18 @@ multi-list recommendation surface.
 | 2021 | [Top-K Contextual Bandits with Equity of Exposure](https://doi.org/10.1145/3460231.3474248) | RecSys | Top-k contextual bandits with exposure fairness constraints. |
 | 2023 | [Combinatorial Categorized Bandits with Expert Rankings](https://www.microsoft.com/en-us/research/publication/combinatorial-categorized-bandits-with-expert-rankings/) | UAI | Aggregates expert/category rankings into a short top-k list under combinatorial bandit objectives. |
 | 2024 | [Neural Combinatorial Clustered Bandits for Recommendation Systems](https://arxiv.org/abs/2410.14586) | arXiv | Neural contextual combinatorial bandit for recommending item subsets. |
+
+### Kuaishou and Shuchang Liu: Request-level, Retention, and Long-term RL
+
+| Year | Paper | Venue | Main idea |
+| --- | --- | --- | --- |
+| 2023 | [Multi-Task Recommendations with Reinforcement Learning](https://arxiv.org/abs/2302.03328) | WWW | Kuaishou collaboration; uses an RL-enhanced multi-task framework to learn dynamic task-loss weights from session-wise interactions. |
+| 2023 | [Reinforcing User Retention in a Billion Scale Short Video Recommender System](https://arxiv.org/abs/2302.01724) | WWW | Kuaishou system paper; formulates retention optimization as a request-based MDP and deploys RLUR in production. |
+| 2023 | [State Regularized Policy Optimization on Data with Dynamics Shift](https://proceedings.neurips.cc/paper_files/paper/2023/hash/67dd6a41bf9539cffc0fc0165e4d0616-Abstract-Conference.html) | NeurIPS | Kuaishou/NTU RL paper for dynamics shift, motivated partly by time-varying recommender environments. |
+| 2024 | [Sequential Recommendation for Optimizing Both Immediate Feedback and Long-term Retention](https://arxiv.org/abs/2404.03637) | SIGIR | Shuchang Liu et al.; decision-transformer approach for balancing immediate engagement with long-term retention. |
+| 2024 | [Future Impact Decomposition in Request-level Recommendations](https://arxiv.org/abs/2401.16108) | KDD | Kuaishou system paper; decomposes request-level list rewards into item-wise future impact for long-term optimization. |
+| 2024 | [Modeling User Retention through Generative Flow Networks](https://arxiv.org/abs/2406.06043) | KDD | Shuchang Liu et al.; propagates sparse retention rewards back to recommended items through a probabilistic flow. |
+| 2025 | [Value Function Decomposition in Markov Recommendation Process](https://arxiv.org/abs/2501.17409) | WWW | Shuchang Liu et al.; decomposes temporal-difference learning to separate stochastic policy effects from user-environment randomness. |
 
 ### Diversity, Coverage, and Set Quality
 
