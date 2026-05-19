@@ -65,12 +65,30 @@ multi-list recommendation surface.
 
 ### Logged Feedback, Bandits, and Off-policy Learning for Slates
 
+These papers focus on the feedback loop after a slate is shown: what the user
+examines, clicks, ignores, or selects, and how those observations can be used to
+learn or evaluate a better slate policy under user-behavior assumptions.
+
 | Year | Paper | Venue | Main idea |
 | --- | --- | --- | --- |
+| 2008 | [Learning Diverse Rankings with Multi-Armed Bandits](https://doi.org/10.1145/1390156.1390255) | ICML | Cornell ranked-bandits paper; decomposes diverse ranking into per-position bandits using click/abandonment feedback. |
+| 2013 | [Ranked Bandits in Metric Spaces: Learning Diverse Rankings over Large Document Collections](https://jmlr.org/papers/v14/slivkins13a.html) | JMLR | Extends ranked bandits with metric structure to scale diverse ranking over large document collections. |
 | 2014 | [Contextual Combinatorial Bandit and its Application on Diversified Online Recommendation](https://doi.org/10.1137/1.9781611973440.53) | SDM | Contextual bandit formulation for selecting a diversified set of recommendations. |
+| 2015 | [Cascading Bandits: Learning to Rank in the Cascade Model](https://proceedings.mlr.press/v37/kveton15.html) | ICML | Assumes users scan a ranked list top-down and click the first attractive item, yielding partial feedback for slate learning. |
+| 2015 | [Combinatorial Cascading Bandits](https://proceedings.neurips.cc/paper_files/paper/2015/hash/1f50893f80d6830d62765ffad7721742-Abstract.html) | NeurIPS | Generalizes cascading feedback to constrained tuple/slate selection with nonlinear rewards and partial observability. |
+| 2016 | [Cascading Bandits for Large-Scale Recommendation Problems](https://auai.org/uai2016/proceedings/papers/96.pdf) | UAI | Adds feature-based generalization to cascade bandits so top-k recommendation can scale to large item sets. |
+| 2016 | [Contextual Combinatorial Cascading Bandits](https://proceedings.mlr.press/v48/lif16.html) | ICML | Selects contextual item lists and observes only a prefix determined by a stopping criterion, with position discounts. |
+| 2016 | [DCM Bandits: Learning to Rank with Multiple Clicks](https://proceedings.mlr.press/v48/katariya16.html) | ICML | Uses the dependent click model to learn rankings from multiple clicks and latent user satisfaction. |
+| 2016 | [Multiple-Play Bandits in the Position-Based Model](https://papers.nips.cc/paper/6546-multiple-play-bandits-in-the-position-based-model) | NeurIPS | Models position bias and ambiguous non-clicks in multi-position recommendation displays. |
 | 2017 | [Off-policy Evaluation for Slate Recommendation](https://papers.nips.cc/paper/6954-off-policy-evaluation-for-slate-recommendation) | NeurIPS | Practical counterfactual evaluation for ordered slates from logged data. |
+| 2017 | [Online Learning to Rank in Stochastic Click Models](https://proceedings.mlr.press/v70/zoghi17a.html) | ICML | Learns ranked lists under a broad class of click models, including cascade and position-based models. |
+| 2018 | [TopRank: A Practical Algorithm for Online Stochastic Ranking](https://proceedings.neurips.cc/paper/by-source-2018-1947) | NeurIPS | Uses a generalized click model covering cascade and PBM-style feedback to learn rankings from clicks. |
 | 2019 | [Top-K Off-Policy Correction for a REINFORCE Recommender System](https://arxiv.org/abs/1812.02353) | WSDM | Production YouTube top-k policy-gradient recommender with off-policy correction for multiple displayed items. |
 | 2019 | [SlateQ: A Tractable Decomposition for Reinforcement Learning with Recommendation Sets](https://doi.org/10.24963/ijcai.2019/360) | IJCAI | Decomposes long-term value of a slate into item-level values under a user-choice model. |
+| 2019 | [Cascading Non-Stationary Bandits: Online Learning to Rank in the Non-Stationary Cascade Model](https://www.ijcai.org/proceedings/2019/396) | IJCAI | Extends cascading bandits to changing user preferences with sliding-window and discounted UCB methods. |
+| 2020 | [Cascading Linear Submodular Bandits: Accounting for Position Bias and Diversity in Online Learning to Rank](https://proceedings.mlr.press/v115/hiranandani20a.html) | UAI | Combines cascade-style click feedback, position bias, and diversity through a submodular ranking model. |
+| 2020 | [Cascading Hybrid Bandits: Online Learning to Rank for Relevance and Diversity](https://doi.org/10.1145/3383313.3412245) | RecSys | Hybrid cascade bandit that optimizes both relevance features and subtopic diversity from click feedback. |
+| 2020 | [Learning to Rank in the Position Based Model with Bandit Feedback](https://doi.org/10.1145/3340531.3412723) | CIKM | Extends contextual bandits to ranked recommendation under PBM-style position bias. |
 | 2021 | [Top-K Contextual Bandits with Equity of Exposure](https://doi.org/10.1145/3460231.3474248) | RecSys | Top-k contextual bandits with exposure fairness constraints. |
 | 2023 | [Combinatorial Categorized Bandits with Expert Rankings](https://www.microsoft.com/en-us/research/publication/combinatorial-categorized-bandits-with-expert-rankings/) | UAI | Aggregates expert/category rankings into a short top-k list under combinatorial bandit objectives. |
 
