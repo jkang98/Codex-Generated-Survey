@@ -59,6 +59,21 @@ multi-list recommendation surface.
 | 2024 | [Utility-Oriented Reranking with Counterfactual Context](https://doi.org/10.1145/3671004) | ACM TKDD | Optimizes list utility by reasoning about the counterfactual context after re-ranking. |
 | 2024 | [Beyond Positive History: Re-ranking with List-level Hybrid Feedback](https://arxiv.org/abs/2410.20778) | arXiv | Uses both positive and negative feedback from previously exposed lists for re-ranking. |
 
+### Kuaishou and Shuchang Liu: Generative Reranking and Large Rankers
+
+| Year | Paper | Venue | Main idea |
+| --- | --- | --- | --- |
+| 2024 | [Discrete Conditional Diffusion for Reranking in Recommendation](https://arxiv.org/abs/2308.06982) | WWW Companion | Kuaishou diffusion reranker that generates item permutations under user-response conditions. |
+| 2024 | [Non-autoregressive Generative Models for Reranking Recommendation](https://arxiv.org/abs/2402.06871) | KDD | Kuaishou NAR4Rec system that generates whole reranked sequences in parallel for industrial latency. |
+| 2025 | [Comprehensive List Generation for Multi-Generator Reranking](https://arxiv.org/abs/2504.15625) | SIGIR | Shuchang Liu et al.; learns complementary generators and optimizes list comprehensiveness for multi-generator reranking. |
+| 2025 | [From Generation to Consumption: Personalized List Value Estimation for Re-ranking](https://arxiv.org/abs/2508.02242) | arXiv | Shuchang Liu et al.; estimates consumed list value by modeling user exit probabilities and sub-list rewards. |
+| 2025 | [GoalRank: Group-Relative Optimization for a Large Ranking Model](https://arxiv.org/abs/2509.22046) | ICLR 2026 | Shuchang Liu et al.; trains a generator-only large ranker with group-relative optimization over recommendation lists. |
+| 2026 | [Denoising Neural Reranker for Recommender Systems](https://arxiv.org/abs/2509.18736) | ICLR 2026 | Shuchang Liu et al.; treats reranking as denoising retriever scores before refining the exposed item list. |
+| 2026 | [FlashEvaluator: Expanding Search Space with Parallel Evaluation](https://arxiv.org/abs/2603.02565) | arXiv | Kuaishou evaluator that compares multiple generated sequences in one forward pass and selects better ranked lists. |
+| 2026 | [Dual-Rerank: Fusing Causality and Utility for Industrial Generative Reranking](https://arxiv.org/abs/2604.07420) | arXiv | Kuaishou industrial reranker for whole-page utility, combining AR-to-NAR distillation with list-wise RL optimization. |
+| 2026 | [From Local Indices to Global Identifiers: Generative Reranking for Recommender Systems via Global Action Space](https://arxiv.org/abs/2604.25291) | arXiv | Shuchang Liu et al.; reformulates listwise reranking as generation over global item identifiers and optimizes listwise utility. |
+| 2026 | [UniRank: Unified List-wise Reranking via Confidence-Ordered Denoising](https://arxiv.org/abs/2605.10527) | arXiv | Shuchang Liu et al.; unifies autoregressive and non-autoregressive reranking with bidirectional ordered-slate denoising. |
+
 ### Bandits, RL, and Off-policy Evaluation for Slates
 
 | Year | Paper | Venue | Main idea |
@@ -75,6 +90,7 @@ multi-list recommendation surface.
 
 | Year | Paper | Venue | Main idea |
 | --- | --- | --- | --- |
+| 2023 | [KuaiSim: A Comprehensive Simulator for Recommender Systems](https://arxiv.org/abs/2309.12645) | NeurIPS | Shuchang Liu et al.; simulator covering request-level listwise recommendation, whole-session sequential recommendation, and cross-session retention. |
 | 2023 | [Multi-Task Recommendations with Reinforcement Learning](https://arxiv.org/abs/2302.03328) | WWW | Kuaishou collaboration; uses an RL-enhanced multi-task framework to learn dynamic task-loss weights from session-wise interactions. |
 | 2023 | [Reinforcing User Retention in a Billion Scale Short Video Recommender System](https://arxiv.org/abs/2302.01724) | WWW | Kuaishou system paper; formulates retention optimization as a request-based MDP and deploys RLUR in production. |
 | 2023 | [State Regularized Policy Optimization on Data with Dynamics Shift](https://proceedings.neurips.cc/paper_files/paper/2023/hash/67dd6a41bf9539cffc0fc0165e4d0616-Abstract-Conference.html) | NeurIPS | Kuaishou/NTU RL paper for dynamics shift, motivated partly by time-varying recommender environments. |
@@ -112,6 +128,7 @@ multi-list recommendation surface.
 | 2022 | [Automate Page Layout Optimization: An Offline Deep Q-learning Approach](https://www.amazon.science/publications/automate-page-layout-optimization-an-offline-deep-q-learning-approach) | Amazon Science | Offline RL approach for page layout optimization. |
 | 2023 | [A Bird's-eye View of Reranking: from List Level to Page Level](https://arxiv.org/abs/2211.09303) | WSDM | Page-level attentional re-ranking for multi-list recommendation pages. |
 | 2024 | [Cooperative Multi-Agent Deep Reinforcement Learning in Content Ranking Optimization](https://arxiv.org/abs/2408.04251) | arXiv | Whole-page ranking with cooperative RL agents across positions. |
+| 2025 | [KLAN: Kuaishou Landing-page Adaptive Navigator](https://arxiv.org/abs/2507.23459) | arXiv | Shuchang Liu et al.; selects personalized landing pages, tabs, channels, or aggregation pages before in-page recommendation. |
 | 2025 | [Enhanced Whole Page Optimization via Mixed-Grained Reward Mechanism-Adapted Language Models](https://arxiv.org/abs/2506.09084) | arXiv | LLM-based whole-page optimization with mixed-grained rewards. |
 
 ### Carousel, Multi-list, Shelf, and Widget Interfaces
