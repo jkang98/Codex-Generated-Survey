@@ -20,6 +20,41 @@ multi-list recommendation surface.
   included when their objective or feedback is about a multi-item or whole-page
   presentation rather than a single next item.
 
+## Coverage Statistics
+
+These counts summarize the current README coverage, not citation impact or a
+complete bibliographic census. Counts are approximate because several papers
+have multiple authors and affiliations; a paper can contribute to more than one
+author or institution cluster when the connection is visible from the paper
+metadata, source page, or row notes.
+
+### Author Coverage
+
+| Author or cluster | Approx. README entries | Main coverage in this README |
+| --- | ---: | --- |
+| Shuchang Liu | 13+ | Generative slate/list recommendation, industrial reranking, request-level recommendation, retention optimization, and Kuaishou page navigation. |
+| Yuta Saito | 6+ | Off-policy evaluation and learning for ranking, slate bandits, deterministic logging, and long-term policy value. |
+| Haruka Kiyohara | 5+ | Ranking-policy OPE under cascade, agnostic, stochastic, and diverse user behavior models. |
+| Branislav Kveton | 6+ | Cascade-bandit, ranked-bandit, and user-click-model learning for top-k recommendation. |
+| Zheng Wen | 4+ | Cascading and dependent-click-model bandits for ranked recommendations. |
+| Csaba Szepesvari | 4+ | Cascading bandits, stochastic ranking, and partial-feedback learning to rank. |
+| James McInerney | 3+ | Playlist, shelf, and slate counterfactual evaluation in music recommendation. |
+| Shuai Li | 2+ | Contextual combinatorial bandits and click-model offline evaluation for rankings. |
+| Thorsten Joachims | 2+ | Ranked bandits and click-feedback learning to rank. |
+
+### Institution Coverage
+
+| Institution or lab | Approx. README entries | Main coverage in this README |
+| --- | ---: | --- |
+| Kuaishou | 18+ | Industrial generative reranking, large rankers, request-level RL, retention optimization, simulation, and landing-page navigation. |
+| Google / YouTube | 5+ | Slate generation, top-k off-policy correction, long-term satisfaction ranking, and production-scale diversification. |
+| Spotify | 3+ | Playlist recommendation, explainable shelves, carousel bandits, and slate counterfactual evaluation. |
+| Microsoft / Microsoft Research | 3+ | Whole-page optimization, ads/search page allocation, and combinatorial categorized bandits. |
+| Amazon / Amazon Science | 2+ | Homepage/widget optimization and offline RL for page layout. |
+| Cornell University | 2+ | Early ranked-bandit and click-feedback ranking formulations. |
+| Yale / Tokyo Institute of Technology / Hanjuku-kaso / ZOZO | 5+ | Ranking and slate OPE with cascade, diverse, deterministic, and combinatorial behavior assumptions. |
+| Netflix | 1+ | Multi-row homepage recommender systems. |
+
 ## Surveys and Background
 
 | Year | Paper | Venue | Why it matters |
@@ -41,7 +76,15 @@ multi-list recommendation surface.
 | 2023 | [Generative Slate Recommendation with Reinforcement Learning](https://arxiv.org/abs/2301.08632) | WSDM | Learns to generate slates with RL under the combinatorial action-space challenge. |
 | 2023 | [Generative Flow Network for Listwise Recommendation](https://arxiv.org/abs/2306.02239) | KDD | Uses GFlowNets to generate diverse high-reward recommendation lists. |
 | 2023 | [Slate-Aware Ranking for Recommendation](https://arxiv.org/abs/2302.12427) | WSDM | Brings slate-level relationships into the ranking stage before the final re-ranker. |
+| 2023 | [KuaiSim: A Comprehensive Simulator for Recommender Systems](https://arxiv.org/abs/2309.12645) | NeurIPS | Shuchang Liu et al.; simulator covering request-level listwise recommendation, whole-session sequential recommendation, and cross-session retention. |
+| 2023 | [Multi-Task Recommendations with Reinforcement Learning](https://arxiv.org/abs/2302.03328) | WWW | Kuaishou collaboration; uses an RL-enhanced multi-task framework to learn dynamic task-loss weights from session-wise interactions. |
+| 2023 | [Reinforcing User Retention in a Billion Scale Short Video Recommender System](https://arxiv.org/abs/2302.01724) | WWW | Kuaishou system paper; formulates retention optimization as a request-based MDP and deploys RLUR in production. |
+| 2023 | [State Regularized Policy Optimization on Data with Dynamics Shift](https://proceedings.neurips.cc/paper_files/paper/2023/hash/67dd6a41bf9539cffc0fc0165e4d0616-Abstract-Conference.html) | NeurIPS | Kuaishou/NTU RL paper for dynamics shift, motivated partly by time-varying recommender environments. |
 | 2024 | [Learned Ranking Function: From Short-term Behavior Predictions to Long-term User Satisfaction](https://arxiv.org/abs/2408.06512) | RecSys | YouTube system that learns a ranking function for slate-level long-term satisfaction. |
+| 2024 | [Sequential Recommendation for Optimizing Both Immediate Feedback and Long-term Retention](https://arxiv.org/abs/2404.03637) | SIGIR | Shuchang Liu et al.; decision-transformer approach for balancing immediate engagement with long-term retention. |
+| 2024 | [Future Impact Decomposition in Request-level Recommendations](https://arxiv.org/abs/2401.16108) | KDD | Kuaishou system paper; decomposes request-level list rewards into item-wise future impact for long-term optimization. |
+| 2024 | [Modeling User Retention through Generative Flow Networks](https://arxiv.org/abs/2406.06043) | KDD | Shuchang Liu et al.; propagates sparse retention rewards back to recommended items through a probabilistic flow. |
+| 2025 | [Value Function Decomposition in Markov Recommendation Process](https://arxiv.org/abs/2501.17409) | WWW | Shuchang Liu et al.; decomposes temporal-difference learning to separate stochastic policy effects from user-environment randomness. |
 
 ### Re-ranking and Listwise Context Models
 
@@ -52,11 +95,6 @@ multi-list recommendation surface.
 | 2019 | [Learning Groupwise Multivariate Scoring Functions Using Deep Neural Networks](https://arxiv.org/abs/1811.04415) | ICTIR | Scores documents/items in groups to capture cross-item effects. |
 | 2020 | [SetRank: Learning a Permutation-Invariant Ranking Model for Information Retrieval](https://arxiv.org/abs/1912.05891) | SIGIR | Set-based ranking model that captures cross-document interactions without depending on input order. |
 | 2024 | [Utility-Oriented Reranking with Counterfactual Context](https://doi.org/10.1145/3671004) | ACM TKDD | Optimizes list utility by reasoning about the counterfactual context after re-ranking. |
-
-### Kuaishou and Shuchang Liu: Generative Reranking and Large Rankers
-
-| Year | Paper | Venue | Main idea |
-| --- | --- | --- | --- |
 | 2024 | [Discrete Conditional Diffusion for Reranking in Recommendation](https://arxiv.org/abs/2308.06982) | WWW Companion | Kuaishou diffusion reranker that generates item permutations under user-response conditions. |
 | 2024 | [Non-autoregressive Generative Models for Reranking Recommendation](https://arxiv.org/abs/2402.06871) | KDD | Kuaishou NAR4Rec system that generates whole reranked sequences in parallel for industrial latency. |
 | 2025 | [Comprehensive List Generation for Multi-Generator Reranking](https://arxiv.org/abs/2504.15625) | SIGIR | Shuchang Liu et al.; learns complementary generators and optimizes list comprehensiveness for multi-generator reranking. |
@@ -99,19 +137,6 @@ learn or evaluate a better slate policy under user-behavior assumptions.
 | 2024 | [Off-Policy Evaluation of Slate Bandit Policies via Optimizing Abstraction](https://doi.org/10.1145/3589334.3645343) | WWW | Haruka Kiyohara, Yuta Saito; learns low-dimensional slate abstractions for lower-variance slate-bandit OPE. |
 | 2024 | [Effective Off-Policy Evaluation and Learning in Contextual Combinatorial Bandits](https://doi.org/10.1145/3640457.3688099) | RecSys | Haruka Kiyohara, Yuta Saito, et al.; evaluates and learns policies that choose combinatorial action subsets. |
 | 2024 | [Long-term Off-Policy Evaluation and Learning](https://doi.org/10.1145/3589334.3645446) | WWW | Yuta Saito et al.; estimates long-term policy value from historical logs and short-term experimental outcomes. |
-
-### Kuaishou and Shuchang Liu: Request-level, Retention, and Long-term RL
-
-| Year | Paper | Venue | Main idea |
-| --- | --- | --- | --- |
-| 2023 | [KuaiSim: A Comprehensive Simulator for Recommender Systems](https://arxiv.org/abs/2309.12645) | NeurIPS | Shuchang Liu et al.; simulator covering request-level listwise recommendation, whole-session sequential recommendation, and cross-session retention. |
-| 2023 | [Multi-Task Recommendations with Reinforcement Learning](https://arxiv.org/abs/2302.03328) | WWW | Kuaishou collaboration; uses an RL-enhanced multi-task framework to learn dynamic task-loss weights from session-wise interactions. |
-| 2023 | [Reinforcing User Retention in a Billion Scale Short Video Recommender System](https://arxiv.org/abs/2302.01724) | WWW | Kuaishou system paper; formulates retention optimization as a request-based MDP and deploys RLUR in production. |
-| 2023 | [State Regularized Policy Optimization on Data with Dynamics Shift](https://proceedings.neurips.cc/paper_files/paper/2023/hash/67dd6a41bf9539cffc0fc0165e4d0616-Abstract-Conference.html) | NeurIPS | Kuaishou/NTU RL paper for dynamics shift, motivated partly by time-varying recommender environments. |
-| 2024 | [Sequential Recommendation for Optimizing Both Immediate Feedback and Long-term Retention](https://arxiv.org/abs/2404.03637) | SIGIR | Shuchang Liu et al.; decision-transformer approach for balancing immediate engagement with long-term retention. |
-| 2024 | [Future Impact Decomposition in Request-level Recommendations](https://arxiv.org/abs/2401.16108) | KDD | Kuaishou system paper; decomposes request-level list rewards into item-wise future impact for long-term optimization. |
-| 2024 | [Modeling User Retention through Generative Flow Networks](https://arxiv.org/abs/2406.06043) | KDD | Shuchang Liu et al.; propagates sparse retention rewards back to recommended items through a probabilistic flow. |
-| 2025 | [Value Function Decomposition in Markov Recommendation Process](https://arxiv.org/abs/2501.17409) | WWW | Shuchang Liu et al.; decomposes temporal-difference learning to separate stochastic policy effects from user-environment randomness. |
 
 ### Diversity, Coverage, and Set Quality
 
