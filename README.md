@@ -12,7 +12,7 @@ multi-list recommendation surface.
 
 - **1D Lists & Rankings**: ordered top-k lists, listwise re-ranking, slate
   generation, set/list diversification, bandits, reinforcement learning, and
-  off-policy evaluation over slates.
+  logged-feedback learning over slates.
 - **2D Grids or Carousel Interfaces & Multi-slate Pages**: recommendation
   surfaces with row/column position effects, multiple carousels, widgets,
   shelves, modules, or page-level layout optimization.
@@ -63,7 +63,7 @@ multi-list recommendation surface.
 | 2025 | [GoalRank: Group-Relative Optimization for a Large Ranking Model](https://arxiv.org/abs/2509.22046) | ICLR 2026 | Shuchang Liu et al.; trains a generator-only large ranker with group-relative optimization over recommendation lists. |
 | 2026 | [Denoising Neural Reranker for Recommender Systems](https://arxiv.org/abs/2509.18736) | ICLR 2026 | Shuchang Liu et al.; treats reranking as denoising retriever scores before refining the exposed item list. |
 
-### Bandits, RL, and Off-policy Evaluation for Slates
+### Logged Feedback, Bandits, and Off-policy Learning for Slates
 
 | Year | Paper | Venue | Main idea |
 | --- | --- | --- | --- |
