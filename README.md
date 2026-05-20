@@ -23,6 +23,144 @@ This survey is organized around two main research questions:
   included when their objective or feedback is about a multi-item or whole-page
   presentation rather than a single next item.
 
+## Layout Perspective Tree
+
+This tree is a secondary index over the papers below. "Layout agnostic" does
+not mean pointwise: these papers still optimize or evaluate the whole list,
+set, or slate as a joint object, but they do not explicitly model visual UI
+geometry. "Layout aware" means the paper explicitly reasons about presentation
+structure such as grid position, carousel browsing, shelves, widgets, modules,
+or whole-page layout. Some papers could fit more than one leaf; the tree places
+each paper by its dominant layout assumption.
+
+```text
+Slate recommendation
+|-- Layout agnostic
+|   |-- Broad background and simulators
+|   |   |-- Deep Reinforcement Learning in Recommender Systems: A Survey and New Perspectives
+|   |   |-- KuaiSim: A Comprehensive Simulator for Recommender Systems
+|   |-- Whole-list, slate, and set construction
+|   |   |-- Beyond Greedy Ranking: Slate Optimization via List-CVAE
+|   |   |-- Variation Control and Evaluation for Generative Slate Recommendations
+|   |   |-- Conditional Sequential Slate Optimization
+|   |   |-- Dynamic Slate Recommendation with Gated Recurrent Units and Thompson Sampling
+|   |   |-- Exploration and Regularization of the Latent Action Space in Recommendation
+|   |   |-- Generative Slate Recommendation with Reinforcement Learning
+|   |   |-- Generative Flow Network for Listwise Recommendation
+|   |   |-- Slate-Aware Ranking for Recommendation
+|   |   |-- Multi-Task Recommendations with Reinforcement Learning
+|   |   |-- Reinforcing User Retention in a Billion Scale Short Video Recommender System
+|   |   |-- State Regularized Policy Optimization on Data with Dynamics Shift
+|   |   |-- Learned Ranking Function: From Short-term Behavior Predictions to Long-term User Satisfaction
+|   |   |-- Sequential Recommendation for Optimizing Both Immediate Feedback and Long-term Retention
+|   |   |-- Future Impact Decomposition in Request-level Recommendations
+|   |   |-- Modeling User Retention through Generative Flow Networks
+|   |   |-- Value Function Decomposition in Markov Recommendation Process
+|   |   |-- Seq2Slate: Re-ranking and Slate Optimization with RNNs
+|   |   |-- Diffusion Model for Slate Recommendation
+|   |   |-- Hierarchical Reinforcement Learning for Temporal Abstraction of Listwise Recommendation
+|   |   |-- From Generation to Consumption: Personalized List Value Estimation for Re-ranking
+|   |   |-- FlashEvaluator: Expanding Search Space with Parallel Evaluation
+|   |   |-- Dual-Rerank: Fusing Causality and Utility for Industrial Generative Reranking
+|   |   |-- From Local Indices to Global Identifiers: Generative Reranking for Recommender Systems via Global Action Space
+|   |   |-- UniRank: Unified List-wise Reranking via Confidence-Ordered Denoising
+|   |-- Listwise reranking and large rankers
+|   |   |-- Learning a Deep Listwise Context Model for Ranking Refinement
+|   |   |-- Personalized Re-ranking for Recommendation
+|   |   |-- Learning Groupwise Multivariate Scoring Functions Using Deep Neural Networks
+|   |   |-- SetRank: Learning a Permutation-Invariant Ranking Model for Information Retrieval
+|   |   |-- Utility-Oriented Reranking with Counterfactual Context
+|   |   |-- Discrete Conditional Diffusion for Reranking in Recommendation
+|   |   |-- Non-autoregressive Generative Models for Reranking Recommendation
+|   |   |-- Comprehensive List Generation for Multi-Generator Reranking
+|   |   |-- GoalRank: Group-Relative Optimization for a Large Ranking Model
+|   |   |-- Denoising Neural Reranker for Recommender Systems
+|   |   |-- Beyond Positive History: Re-ranking with List-level Hybrid Feedback
+|   |-- Diversity, coverage, and set quality
+|   |   |-- Improving Recommendation Lists Through Topic Diversification
+|   |   |-- Determinantal Point Processes for Machine Learning
+|   |   |-- Practical Diversified Recommendations on YouTube with Determinantal Point Processes
+|   |   |-- Fast Greedy MAP Inference for Determinantal Point Process to Improve Recommendation Diversity
+|   |-- Ranked-list feedback, click models, bandits, and OPE
+|   |   |-- Learning Diverse Rankings with Multi-Armed Bandits
+|   |   |-- Ranked Bandits in Metric Spaces: Learning Diverse Rankings over Large Document Collections
+|   |   |-- Contextual Combinatorial Bandit and its Application on Diversified Online Recommendation
+|   |   |-- Bandit Learning for Diversified Interactive Recommendation
+|   |   |-- Cascading Bandits: Learning to Rank in the Cascade Model
+|   |   |-- Combinatorial Cascading Bandits
+|   |   |-- Cascading Bandits for Large-Scale Recommendation Problems
+|   |   |-- Contextual Combinatorial Cascading Bandits
+|   |   |-- DCM Bandits: Learning to Rank with Multiple Clicks
+|   |   |-- Multiple-Play Bandits in the Position-Based Model
+|   |   |-- Off-policy Evaluation for Slate Recommendation
+|   |   |-- Online Learning to Rank in Stochastic Click Models
+|   |   |-- Offline Evaluation of Ranking Policies with Click Models
+|   |   |-- TopRank: A Practical Algorithm for Online Stochastic Ranking
+|   |   |-- Offline Evaluation to Make Decisions About Playlist Recommendation Algorithms
+|   |   |-- Top-K Off-Policy Correction for a REINFORCE Recommender System
+|   |   |-- SlateQ: A Tractable Decomposition for Reinforcement Learning with Recommendation Sets
+|   |   |-- Cascading Non-Stationary Bandits: Online Learning to Rank in the Non-Stationary Cascade Model
+|   |   |-- Cascading Linear Submodular Bandits: Accounting for Position Bias and Diversity in Online Learning to Rank
+|   |   |-- Cascading Hybrid Bandits: Online Learning to Rank for Relevance and Diversity
+|   |   |-- Counterfactual Evaluation of Slate Recommendations with Sequential Reward Interactions
+|   |   |-- Learning to Rank in the Position Based Model with Bandit Feedback
+|   |   |-- Top-K Contextual Bandits with Equity of Exposure
+|   |   |-- Doubly Robust Off-Policy Evaluation for Ranking Policies under the Cascade Behavior Model
+|   |   |-- Combinatorial Categorized Bandits with Expert Rankings
+|   |   |-- Off-Policy Evaluation of Ranking Policies under Diverse User Behavior
+|   |   |-- Off-Policy Evaluation of Slate Bandit Policies via Optimizing Abstraction
+|   |   |-- Effective Off-Policy Evaluation and Learning in Contextual Combinatorial Bandits
+|   |   |-- Long-term Off-Policy Evaluation and Learning
+|   |   |-- Combining Reward and Rank Signals for Slate Recommendation
+|   |   |-- Towards Adaptive Off-Policy Evaluation of Ranking Policies under Agnostic and Stochastic Behavior Models
+|   |   |-- Impression-Aware Recommender Systems
+|   |   |-- Neural Combinatorial Clustered Bandits for Recommendation Systems
+|   |   |-- Off-Policy Evaluation for Ranking Policies under Deterministic Logging Policies
+|-- Layout aware
+|   |-- Grid and 2D presentation
+|   |   |-- Eye-tracking Study of User Behavior in Recommender Interfaces
+|   |   |-- The Effects of Recommendations' Presentation on Persuasion and Satisfaction in a Movie Recommender System
+|   |   |-- Understanding Choice Overload in Recommender Systems
+|   |   |-- Personalizing User Interfaces for Improving Quality of Experience in VoD Recommender Systems
+|   |   |-- Toward User Engagement Optimization in 2D Presentation
+|   |   |-- Controlling Personalized Recommendations in Two Dimensions with a Carousel-Based Interface
+|   |   |-- Examining Choice Overload Across Single-List and Multi-List User Interfaces
+|   |-- Carousel, multi-list, shelf, and widget interfaces
+|   |   |-- Multi-list interfaces for recommender systems: survey and future directions
+|   |   |-- The Netflix Recommender System: Algorithms, Business Value, and Innovation
+|   |   |-- Using Navigation to Improve Recommendations in Real-Time
+|   |   |-- Explore, Exploit, and Explain: Personalizing Explainable Recommendations with Bandits
+|   |   |-- Carousel Personalization in Music Streaming Apps with Contextual Bandits
+|   |   |-- Automatic Collection Creation and Recommendation
+|   |   |-- Optimizing the Selection of Recommendation Carousels with Quantum Computing
+|   |   |-- Measuring the User Satisfaction in a Recommendation Interface with Multiple Carousels
+|   |   |-- Offline Evaluation of Recommender Systems in a User Interface With Multiple Carousels
+|   |   |-- The Magic of Carousels: Single vs. Multi-List Recommender Systems
+|   |   |-- Exploring Multi-List User Interfaces for Similar-Item Recommendations
+|   |   |-- Serving Each User: Supporting Different Eating Goals Through a Multi-List Recommender Interface
+|   |   |-- How Users Ride the Carousel: Exploring the Design of Multi-List Recommender Interfaces From a User Perspective
+|   |   |-- Examining the User Evaluation of Multi-List Recommender Interfaces in the Context of Healthy Recipe Choices
+|   |   |-- Towards Simulation-Based Evaluation of Recommender Systems with Carousel Interfaces
+|   |   |-- From Ranked Lists to Carousels: A Carousel Click Model
+|   |   |-- RecGaze: The First Eye Tracking and User Interaction Dataset for Carousel Interfaces
+|   |   |-- Riding the Carousel: The First Extensive Eye Tracking Analysis of Browsing Behavior in Carousel Recommenders
+|   |   |-- Effective Diversification of Multi-Carousel Book Recommendation
+|   |-- Whole page, page modules, and landing pages
+|   |   |-- Whole Page Optimization: How Page Elements Interact with the Position Auction
+|   |   |-- Beyond Ranking: Optimizing Whole-Page Presentation
+|   |   |-- Whole-Page Optimization and Submodular Welfare Maximization with Online Bidders
+|   |   |-- Efficient Ordered Combinatorial Semi-Bandits for Whole-Page Recommendation
+|   |   |-- Deep Reinforcement Learning for Page-wise Recommendations
+|   |   |-- The Whole-Page Optimization via Dynamic Ad Allocation
+|   |   |-- Whole Page Optimization with Global Constraints
+|   |   |-- Page-level Optimization of e-Commerce Item Recommendations
+|   |   |-- Automate Page Layout Optimization: An Offline Deep Q-learning Approach
+|   |   |-- A Bird's-eye View of Reranking: from List Level to Page Level
+|   |   |-- Cooperative Multi-Agent Deep Reinforcement Learning in Content Ranking Optimization
+|   |   |-- KLAN: Kuaishou Landing-page Adaptive Navigator
+|   |   |-- Enhanced Whole Page Optimization via Mixed-Grained Reward Mechanism-Adapted Language Models
+```
+
 ## Coverage Statistics
 
 These counts summarize the current README coverage, not citation impact or a
