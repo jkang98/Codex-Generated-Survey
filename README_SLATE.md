@@ -110,6 +110,8 @@ Slate recommendation
 |   |   |-- DCM Bandits: Learning to Rank with Multiple Clicks
 |   |   |-- Multiple-Play Bandits in the Position-Based Model
 |   |   |-- Off-policy Evaluation for Slate Recommendation
+|   |   |-- Doubly Robust Estimator for Ranking Metrics with Post-Click Conversions
+|   |   |-- Open Bandit Dataset and Pipeline: Towards Realistic and Reproducible Off-Policy Evaluation
 |   |   |-- Online Learning to Rank in Stochastic Click Models
 |   |   |-- Offline Evaluation of Ranking Policies with Click Models
 |   |   |-- TopRank: A Practical Algorithm for Online Stochastic Ranking
@@ -204,7 +206,7 @@ metadata, source page, or row notes.
 | Author or cluster | Approx. README entries | Main coverage in this README |
 | --- | ---: | --- |
 | Shuchang Liu | 13+ | Generative slate/list recommendation, industrial reranking, request-level recommendation, retention optimization, and Kuaishou page navigation. |
-| Yuta Saito | 6+ | Off-policy evaluation and learning for ranking, slate bandits, deterministic logging, and long-term policy value. |
+| Yuta Saito | 8+ | Off-policy evaluation and learning for ranking and slate bandits, ranking-metric debiasing, the Open Bandit OPE benchmark, deterministic logging, and long-term policy value. |
 | Haruka Kiyohara | 5+ | Ranking-policy OPE under cascade, agnostic, stochastic, and diverse user behavior models. |
 | Branislav Kveton | 6+ | Cascade-bandit, ranked-bandit, and user-click-model learning for top-k recommendation. |
 | Zheng Wen | 4+ | Cascading and dependent-click-model bandits for ranked recommendations. |
@@ -427,7 +429,9 @@ learn or evaluate a better slate policy under user-behavior assumptions.
 | 2020 | [Cascading Hybrid Bandits: Online Learning to Rank for Relevance and Diversity](https://doi.org/10.1145/3383313.3412245) | RecSys | Hybrid cascade bandit that optimizes both relevance features and subtopic diversity from click feedback. |
 | 2020 | [Counterfactual Evaluation of Slate Recommendations with Sequential Reward Interactions](https://doi.org/10.1145/3394486.3403229) | KDD | James McInerney et al.; evaluates slate policies when rewards interact sequentially across positions. |
 | 2020 | [Learning to Rank in the Position Based Model with Bandit Feedback](https://doi.org/10.1145/3340531.3412723) | CIKM | Extends contextual bandits to ranked recommendation under PBM-style position bias. |
+| 2020 | [Doubly Robust Estimator for Ranking Metrics with Post-Click Conversions](https://doi.org/10.1145/3383313.3412262) | RecSys | Yuta Saito; debiases ranking-quality metrics (e.g., DCG) estimated from post-click conversions, correcting the selection bias between clicked and unclicked items with an IPS / doubly-robust estimator. |
 | 2021 | [Top-K Contextual Bandits with Equity of Exposure](https://doi.org/10.1145/3460231.3474248) | RecSys | Top-k contextual bandits with exposure fairness constraints. |
+| 2021 | [Open Bandit Dataset and Pipeline: Towards Realistic and Reproducible Off-Policy Evaluation](https://arxiv.org/abs/2008.07146) | NeurIPS | Yuta Saito et al.; large-scale logged-bandit benchmark from a three-position fashion recommender (ZOZOTOWN) with multiple logging policies, plus the Open Bandit Pipeline — a widely used testbed for recommendation and ranking OPE. |
 | 2022 | [Doubly Robust Off-Policy Evaluation for Ranking Policies under the Cascade Behavior Model](https://doi.org/10.1145/3488560.3498380) | WSDM | Haruka Kiyohara, Yuta Saito, et al.; combines cascade user behavior with a doubly robust ranking-policy estimator. |
 | 2023 | [Combinatorial Categorized Bandits with Expert Rankings](https://www.microsoft.com/en-us/research/publication/combinatorial-categorized-bandits-with-expert-rankings/) | UAI | Aggregates expert/category rankings into a short top-k list under combinatorial bandit objectives. |
 | 2023 | [Off-Policy Evaluation of Ranking Policies under Diverse User Behavior](https://doi.org/10.1145/3580305.3599447) | KDD | Haruka Kiyohara, Yuta Saito, et al.; adapts ranking OPE to context-dependent user behavior assumptions. |
@@ -488,7 +492,7 @@ papers above.
 | 2025 | Slate Construction | [RIA: A Ranking-Infused Approach for Optimized Listwise CTR Prediction](https://arxiv.org/abs/2511.21394) | Meituan ads; listwise CTR reranker with hierarchical item dependencies and position-sensitive preference learning over the whole list. |
 | 2025 | Slate Construction | [Diversity Recommendation via Causal Deconfounding of Co-purchase Relations and Counterfactual Exposure](https://arxiv.org/abs/2512.17733) | Cadence; LightGCN-based diversity-aware recommender that optimizes list-level diversity alongside accuracy via causal deconfounding. |
 | 2025 | Slate Construction | [Diversified recommendations of cultural activities with personalized determinantal point processes](https://arxiv.org/abs/2509.10392) | Personalized DPP selects a diverse subset of up to 60 items for the homepage, evaluated with offline diversity metrics and an online A/B/C CTR test. |
-| 2025 | Slate Feedback, Learning, and Evaluation | [Off-Policy Evaluation of Ranking Policies via Embedding-Space User Behavior Modeling](https://arxiv.org/abs/2506.00446) | Proposes GMIPS/MRIPS estimators with cascade behavior over ranking embeddings for large ranking action spaces. |
+| 2025 | Slate Feedback, Learning, and Evaluation | [Off-Policy Evaluation of Ranking Policies via Embedding-Space User Behavior Modeling](https://arxiv.org/abs/2506.00446) | Proposes GMIPS/MRIPS estimators — generalizing Saito & Joachims' MIPS (ICML 2022) from single large-action-space choices to rankings — with cascade behavior over ranking embeddings for large ranking action spaces. |
 | 2025 | Slate Feedback, Learning, and Evaluation | [Online Learning to Rank under Corruption: A Robust Cascading Bandits Approach](https://arxiv.org/abs/2511.03074) | Cascading-bandit OLTR that presents a ranked list and learns from click feedback robustly under adversarial corruption (click fraud). |
 | 2025 | Slate Feedback, Learning, and Evaluation | [Cascading Bandits Robust to Adversarial Corruptions](https://arxiv.org/abs/2502.08077) | Recommends a ranked list of K items and learns from cascade click feedback that is robust to adversarial corruptions. |
 | 2025 | Slate Feedback, Learning, and Evaluation | [Correcting for Position Bias in Learning to Rank: A Control Function Approach](https://arxiv.org/abs/2506.06989) | Counterfactual learning-to-rank that corrects position bias in ranked-list click feedback via a control function. |
