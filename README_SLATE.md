@@ -43,6 +43,7 @@ Slate recommendation
 |   |   |-- The Diversity Paradox revisited: Systemic Effects of Feedback Loops in Recommender Systems
 |   |-- Whole-list, slate, and set construction
 |   |   |-- Beyond Greedy Ranking: Slate Optimization via List-CVAE
+|   |   |-- Exact-K Recommendation via Maximal Clique Optimization
 |   |   |-- Variation Control and Evaluation for Generative Slate Recommendations
 |   |   |-- Conditional Sequential Slate Optimization
 |   |   |-- Dynamic Slate Recommendation with Gated Recurrent Units and Thompson Sampling
@@ -74,6 +75,9 @@ Slate recommendation
 |   |-- Listwise reranking and large rankers
 |   |   |-- Learning a Deep Listwise Context Model for Ranking Refinement
 |   |   |-- Personalized Re-ranking for Recommendation
+|   |   |-- Revisit Recommender System in the Permutation Prospective (PRS)
+|   |   |-- GRN: Generative Rerank Network for Context-wise Recommendation
+|   |   |-- PIER: Permutation-Level Interest-Based End-to-End Re-ranking
 |   |   |-- Learning Groupwise Multivariate Scoring Functions Using Deep Neural Networks
 |   |   |-- SetRank: Learning a Permutation-Invariant Ranking Model for Information Retrieval
 |   |   |-- Utility-Oriented Reranking with Counterfactual Context
@@ -227,6 +231,87 @@ metadata, source page, or row notes.
 | 2023 | [Multi-list interfaces for recommender systems: survey and future directions](https://doi.org/10.3389/fdata.2023.1239705) | Frontiers in Big Data | The most directly relevant survey for carousel and multi-list recommender interfaces. |
 | 2023 | [Deep Reinforcement Learning in Recommender Systems: A Survey and New Perspectives](https://doi.org/10.1016/j.knosys.2023.110335) | Knowledge-Based Systems | Broad RL-for-recommendation context, including long-term optimization beyond one-step prediction. |
 
+## Main Threads
+
+The taxonomy and tree above are indexes; this section is the synthesis. Six arcs
+run through the collection, and reading the survey along them is often more
+informative than reading it table by table.
+
+### 1. From greedy pointwise ranking to whole-slate generation
+
+The oldest and strongest arc treats the exposed list as a single object to be
+generated rather than a set of independently scored items. List-CVAE (2018) first
+generated complete slates with a conditional VAE; Seq2Slate (2018) made the
+construction sequential with a pointer network. An intermediate *permutation-wise*
+line — Exact-K (2019), PRS (2021), GRN (2021), and PIER (2023) — reframed
+reranking as selecting or generating a whole permutation that is then scored by a
+list-aware evaluator, bridging early slate generation and today's generative
+rerankers. The generative line then branches into RL (Generative Slate
+Recommendation with RL, 2023; Exploration and Regularization of the Latent Action
+Space, 2023), GFlowNets (Generative Flow Network for Listwise Recommendation,
+2023), and diffusion (Discrete Conditional Diffusion, 2024; Diffusion Model for
+Slate Recommendation, 2024). By 2024-2026 the dominant industrial form is
+autoregressive / non-autoregressive generative reranking (NAR4Rec, 2024, and the
+Taobao / Meituan / Tencent / Kuaishou generative rerankers), and most recently
+LLM-as-reranker (One Pass, Any Order, 2026; Rich-Media Re-Ranker, 2026).
+
+### 2. A slate's value is not the sum of its items: long-term, list-level RL
+
+A second arc insists that the reward of a slate is more than the sum of per-item
+scores. SlateQ (2019) decomposed the long-term value of a slate into item-level
+values under an explicit user-choice model; Top-K Off-Policy Correction (2019)
+brought policy-gradient learning to a production top-k recommender. The Kuaishou
+line then pushes toward long horizons: request-level MDPs for retention
+(Reinforcing User Retention, 2023), future-impact decomposition (2024), retention
+through generative flow networks (2024), and value-function decomposition (2025).
+The recurring lesson is that clicks are a proxy, and the real objective is
+long-term user value over the whole list and session.
+
+### 3. Learning and evaluating from logged slate feedback
+
+Because users reveal only partial, position-biased feedback, a large body of work
+models the browsing process explicitly — cascade, position-based, and
+dependent-click models — and builds bandit or off-policy estimators on top. The
+bandit side runs from Cascading Bandits (2015) through combinatorial, contextual,
+non-stationary, and corruption-robust variants. The off-policy-evaluation side
+(most visibly the Saito / Kiyohara line) progresses from slate IPS (Off-policy
+Evaluation for Slate Recommendation, 2017) to doubly robust cascade estimators,
+learned slate abstractions, embedding-space behavior models, and
+deterministic-logging and long-term-value estimators (2024-2026). This is the
+deepest single thread in the collection and the one most tightly coupled to
+explicit user-behavior assumptions.
+
+### 4. Diversity and set quality
+
+A slate's worth depends on coverage, not just per-item relevance. Production DPP on
+YouTube (2018) and fast greedy MAP inference (2018) anchor the line; recent work
+adds adaptive quality-diversity trade-offs from post-exposure feedback (B-DivRec,
+2026), causal deconfounding of co-purchase relations (Cadence, 2025), personalized
+DPP for the homepage (2025), and even carbon-aware re-ranking (2026). Intra-list
+diversity (ILD) recurs as the evaluation currency across these papers.
+
+### 5. Layout-aware presentation: carousels, multi-list, and whole pages
+
+Once the surface is two-dimensional, geometry matters. From the Netflix multi-row
+homepage (2015) and whole-page presentation optimization (2016), the carousel
+sub-line develops contextual-bandit personalization (2020), carousel-specific click
+models, and — most distinctively in 2024-2026 — eye-tracking datasets and analyses
+(RecGaze, 2025; Riding the Carousel, 2025) plus simulation-based carousel
+evaluation. The whole-page sub-line runs in parallel through page-wise RL
+(DeepPage, 2018), constrained widget ranking (Whole Page Optimization with Global
+Constraints, 2019), and recent LLM- and causal-driven whole-page optimization
+(2025-2026).
+
+### 6. The 2024-2026 inflection
+
+Three currents converge in the most recent work: (i) generative and LLM-based
+rerankers, world models, and judges (LLM-as-a-Judge world models, 2025, and the
+2026 LLM-reranking cluster); (ii) the scientific study of carousel browsing through
+eye tracking and principled click-model design; and (iii) industrial-scale
+generative reranking deployed across Kuaishou, Meituan, Taobao, Tencent, Pinterest,
+Bilibili, and Baidu. Taken together, the field is shifting from "score, then sort"
+toward "generate, evaluate, and present the whole surface."
+
 ## Slate Construction: What to Recommend
 
 This branch asks how the system should build the final recommendation surface.
@@ -238,6 +323,7 @@ ranking, reranking, diversifying, or laying out the slate/page that users see.
 | Year | Paper | Venue | Main idea |
 | --- | --- | --- | --- |
 | 2018 | [Beyond Greedy Ranking: Slate Optimization via List-CVAE](https://arxiv.org/abs/1803.01682) | ICLR 2019 | Directly generates complete slates with a conditional VAE instead of greedily sorting item scores. |
+| 2019 | [Exact-K Recommendation via Maximal Clique Optimization](https://arxiv.org/abs/1905.07089) | KDD | Constructs a whole card of K items as constrained combinatorial optimization (reduced to maximal clique), learning the joint distribution of the set end-to-end rather than ranking items individually. |
 | 2021 | [Variation Control and Evaluation for Generative Slate Recommendations](https://arxiv.org/abs/2102.13302) | WWW | Shuchang Liu et al.; studies generative slate recommendation and adds variation metrics beyond accuracy for stochastic slate generators. |
 | 2021 | [Conditional Sequential Slate Optimization](https://arxiv.org/abs/2108.05618) | SIGIR eCom | Re-ranks candidates into a slate while jointly optimizing ranking quality and composition constraints. |
 | 2022 | [Dynamic Slate Recommendation with Gated Recurrent Units and Thompson Sampling](https://arxiv.org/abs/2104.15046) | Data Mining and Knowledge Discovery | Models slate exposure explicitly and introduces in-slate Thompson sampling for exploration. |
@@ -263,6 +349,7 @@ ranking, reranking, diversifying, or laying out the slate/page that users see.
 | 2019 | [Personalized Re-ranking for Recommendation](https://doi.org/10.1145/3298689.3347000) | RecSys | Transformer-style personalized re-ranking that models item interactions in the candidate list. |
 | 2019 | [Learning Groupwise Multivariate Scoring Functions Using Deep Neural Networks](https://arxiv.org/abs/1811.04415) | ICTIR | Scores documents/items in groups to capture cross-item effects. |
 | 2020 | [SetRank: Learning a Permutation-Invariant Ranking Model for Information Retrieval](https://arxiv.org/abs/1912.05891) | SIGIR | Set-based ranking model that captures cross-document interactions without depending on input order. |
+| 2023 | [PIER: Permutation-Level Interest-Based End-to-End Re-ranking Framework in E-commerce](https://arxiv.org/abs/2302.03487) | KDD | Selects top permutations with a fine-grained permutation-selection module and scores them with an omnidirectional context-aware model, deployed at Meituan. |
 | 2024 | [Utility-Oriented Reranking with Counterfactual Context](https://doi.org/10.1145/3671004) | ACM TKDD | Optimizes list utility by reasoning about the counterfactual context after re-ranking. |
 | 2024 | [Discrete Conditional Diffusion for Reranking in Recommendation](https://arxiv.org/abs/2308.06982) | WWW Companion | Kuaishou diffusion reranker that generates item permutations under user-response conditions. |
 | 2024 | [Non-autoregressive Generative Models for Reranking Recommendation](https://arxiv.org/abs/2402.06871) | KDD | Kuaishou NAR4Rec system that generates whole reranked sequences in parallel for industrial latency. |
@@ -378,6 +465,8 @@ papers above.
 | --- | --- | --- | --- |
 | 2018 | Slate Construction | [Seq2Slate: Re-ranking and Slate Optimization with RNNs](https://arxiv.org/abs/1810.02019) | Uses a pointer-network style sequence model to choose a slate item by item while conditioning on previous choices. |
 | 2019 | Slate Feedback, Learning, and Evaluation | [Bandit Learning for Diversified Interactive Recommendation](https://arxiv.org/abs/1907.01647) | Diversified contextual combinatorial bandit for interactive recommendation. |
+| 2021 | Slate Construction | [Revisit Recommender System in the Permutation Prospective (PRS)](https://arxiv.org/abs/2102.12057) | Permutation-wise reranking framework: PMatch generates candidate lists via goal-oriented beam search and PRank scores whole permutations, deployed at Taobao. |
+| 2021 | Slate Construction | [GRN: Generative Rerank Network for Context-wise Recommendation](https://arxiv.org/abs/2104.00860) | Generator-evaluator reranker; a pointer-network generator builds the list step by step while a context-aware evaluator scores the whole ranked list. |
 | 2021 | Slate Feedback, Learning, and Evaluation | [Combining Reward and Rank Signals for Slate Recommendation](https://arxiv.org/abs/2107.12455) | Probabilistic slate model that uses both whether the slate received a reward and which rank was selected. |
 | 2022 | Slate Feedback, Learning, and Evaluation | [From Ranked Lists to Carousels: A Carousel Click Model](https://arxiv.org/abs/2209.13426) | Click model for browsing behavior in carousel recommenders. |
 | 2022 | Slate Feedback, Learning, and Evaluation | [Towards Adaptive Off-Policy Evaluation of Ranking Policies under Agnostic and Stochastic Behavior Models](https://www.kdd.org/kdd2022/papers/01_Haruka%20Kiyohara.pdf) | Haruka Kiyohara; adaptive IPS for ranking-policy OPE when the user behavior model is unknown or stochastic. |
