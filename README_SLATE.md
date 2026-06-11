@@ -39,6 +39,8 @@ Slate recommendation
 |   |-- Broad background and simulators
 |   |   |-- Deep Reinforcement Learning in Recommender Systems: A Survey and New Perspectives
 |   |   |-- KuaiSim: A Comprehensive Simulator for Recommender Systems
+|   |   |-- LLM-as-a-Judge: Toward World Models for Slate Recommendation Systems
+|   |   |-- The Diversity Paradox revisited: Systemic Effects of Feedback Loops in Recommender Systems
 |   |-- Whole-list, slate, and set construction
 |   |   |-- Beyond Greedy Ranking: Slate Optimization via List-CVAE
 |   |   |-- Variation Control and Evaluation for Generative Slate Recommendations
@@ -64,6 +66,11 @@ Slate recommendation
 |   |   |-- Dual-Rerank: Fusing Causality and Utility for Industrial Generative Reranking
 |   |   |-- From Local Indices to Global Identifiers: Generative Reranking for Recommender Systems via Global Action Space
 |   |   |-- UniRank: Unified List-wise Reranking via Confidence-Ordered Denoising
+|   |   |-- HiGR: Industrial-Scale Hierarchical Generative Slate Recommendation Framework in Tencent
+|   |   |-- Next-Scale Generative Reranking: A Tree-based Generative Rerank Method at Meituan
+|   |   |-- SCASRec: A Self-Correcting and Auto-Stopping Model for Generative Route List Recommendation
+|   |   |-- Breaking the Likelihood Trap: Consistent Generative Recommendation with Graph-structured Model
+|   |   |-- Don't Get Bored: Enhancing Scalability and Diversity in Session-Based Slate Recommendation
 |   |-- Listwise reranking and large rankers
 |   |   |-- Learning a Deep Listwise Context Model for Ranking Refinement
 |   |   |-- Personalized Re-ranking for Recommendation
@@ -76,11 +83,22 @@ Slate recommendation
 |   |   |-- GoalRank: Group-Relative Optimization for a Large Ranking Model
 |   |   |-- Denoising Neural Reranker for Recommender Systems
 |   |   |-- Beyond Positive History: Re-ranking with List-level Hybrid Feedback
+|   |   |-- One Pass, Any Order: Position-Invariant Listwise Reranking for LLM-Based Recommendation
+|   |   |-- Beyond Static Best-of-N: Bayesian List-wise Alignment for LLM-based Recommendation
+|   |   |-- Rich-Media Re-Ranker: A User Satisfaction-Driven LLM Re-ranking Framework for Rich-Media Search
+|   |   |-- Whole-Pool Setwise Reranking with Long-Context Language Models
+|   |   |-- A Generative Re-ranking Model for List-level Multi-objective Optimization at Taobao
+|   |   |-- RIA: A Ranking-Infused Approach for Optimized Listwise CTR Prediction
+|   |   |-- You Only Evaluate Once: A Tree-based Rerank Method at Meituan
 |   |-- Diversity, coverage, and set quality
 |   |   |-- Improving Recommendation Lists Through Topic Diversification
 |   |   |-- Determinantal Point Processes for Machine Learning
 |   |   |-- Practical Diversified Recommendations on YouTube with Determinantal Point Processes
 |   |   |-- Fast Greedy MAP Inference for Determinantal Point Process to Improve Recommendation Diversity
+|   |   |-- Trading Engagement for Sustainability: Carbon-Aware Re-ranking for E-commerce Recommendations
+|   |   |-- Adaptive Quality-Diversity Trade-offs for Large-Scale Batch Recommendation
+|   |   |-- Diversity Recommendation via Causal Deconfounding of Co-purchase Relations and Counterfactual Exposure
+|   |   |-- Diversified recommendations of cultural activities with personalized determinantal point processes
 |   |-- Ranked-list feedback, click models, bandits, and OPE
 |   |   |-- Learning Diverse Rankings with Multi-Armed Bandits
 |   |   |-- Ranked Bandits in Metric Spaces: Learning Diverse Rankings over Large Document Collections
@@ -116,6 +134,13 @@ Slate recommendation
 |   |   |-- Impression-Aware Recommender Systems
 |   |   |-- Neural Combinatorial Clustered Bandits for Recommendation Systems
 |   |   |-- Off-Policy Evaluation for Ranking Policies under Deterministic Logging Policies
+|   |   |-- Additive Control Variates Dominate Self-Normalisation in Off-Policy Evaluation
+|   |   |-- Off-Policy Evaluation of Ranking Policies via Embedding-Space User Behavior Modeling
+|   |   |-- Online Learning to Rank under Corruption: A Robust Cascading Bandits Approach
+|   |   |-- Cascading Bandits Robust to Adversarial Corruptions
+|   |   |-- Correcting for Position Bias in Learning to Rank: A Control Function Approach
+|   |   |-- Addressing Personalized Bias for Unbiased Learning to Rank
+|   |   |-- Unidentified and Confounded? Understanding Two-Tower Models for Unbiased Learning to Rank
 |-- Layout aware
 |   |-- Grid and 2D presentation
 |   |   |-- Eye-tracking Study of User Behavior in Recommender Interfaces
@@ -145,6 +170,11 @@ Slate recommendation
 |   |   |-- RecGaze: The First Eye Tracking and User Interaction Dataset for Carousel Interfaces
 |   |   |-- Riding the Carousel: The First Extensive Eye Tracking Analysis of Browsing Behavior in Carousel Recommenders
 |   |   |-- Effective Diversification of Multi-Carousel Book Recommendation
+|   |   |-- LLM-Assisted Reranking to Operationalize Nuanced Objectives in Recommender Systems
+|   |   |-- Full-Page Recommender: A Modular Framework for Multi-Carousel Recommendations
+|   |   |-- Rethinking Click Models in Light of Carousel Interfaces: Theory-Based Categorization and Design of Click Models
+|   |   |-- From Latent to Observable Position-Based Click Models in Carousel Interfaces
+|   |   |-- UniPinRec: Unifying Generative Retrieval and Ranking at Pinterest Scale
 |   |-- Whole page, page modules, and landing pages
 |   |   |-- Whole Page Optimization: How Page Elements Interact with the Position Auction
 |   |   |-- Beyond Ranking: Optimizing Whole-Page Presentation
@@ -159,6 +189,11 @@ Slate recommendation
 |   |   |-- Cooperative Multi-Agent Deep Reinforcement Learning in Content Ranking Optimization
 |   |   |-- KLAN: Kuaishou Landing-page Adaptive Navigator
 |   |   |-- Enhanced Whole Page Optimization via Mixed-Grained Reward Mechanism-Adapted Language Models
+|   |   |-- STCRank: Spatio-temporal Collaborative Ranking for Interactive Recommender System at Kuaishou E-shop
+|   |   |-- An Efficient Framework for Whole-Page Reranking via Single-Modal Supervision
+|   |   |-- Design and Evaluation of Whole-Page Experience Optimization for E-commerce Search
+|   |   |-- Constraint-Aware Generative Re-ranking for Multi-Objective Optimization in Advertising Feeds
+|   |   |-- A Cascaded Generative Approach for e-Commerce Recommendations
 ```
 
 ## Coverage Statistics
@@ -229,6 +264,7 @@ ranking, reranking, diversifying, or laying out the slate/page that users see.
 | 2024 | [Future Impact Decomposition in Request-level Recommendations](https://arxiv.org/abs/2401.16108) | KDD | Kuaishou system paper; decomposes request-level list rewards into item-wise future impact for long-term optimization. |
 | 2024 | [Modeling User Retention through Generative Flow Networks](https://arxiv.org/abs/2406.06043) | KDD | Shuchang Liu et al.; propagates sparse retention rewards back to recommended items through a probabilistic flow. |
 | 2025 | [Value Function Decomposition in Markov Recommendation Process](https://arxiv.org/abs/2501.17409) | WWW | Shuchang Liu et al.; decomposes temporal-difference learning to separate stochastic policy effects from user-environment randomness. |
+| 2025 | [Don't Get Bored: Enhancing Scalability and Diversity in Session-Based Slate Recommendation](https://dl.acm.org/doi/10.1145/3733241) | ACM TORS | Composes diverse slates with RL using item- and slate-level representations, evaluated with a boredom/engagement user simulator. |
 
 ### Re-ranking and Listwise Context Models
 
@@ -243,6 +279,8 @@ ranking, reranking, diversifying, or laying out the slate/page that users see.
 | 2024 | [Non-autoregressive Generative Models for Reranking Recommendation](https://arxiv.org/abs/2402.06871) | KDD | Kuaishou NAR4Rec system that generates whole reranked sequences in parallel for industrial latency. |
 | 2025 | [Comprehensive List Generation for Multi-Generator Reranking](https://arxiv.org/abs/2504.15625) | SIGIR | Shuchang Liu et al.; learns complementary generators and optimizes list comprehensiveness for multi-generator reranking. |
 | 2025 | [GoalRank: Group-Relative Optimization for a Large Ranking Model](https://arxiv.org/abs/2509.22046) | ICLR 2026 | Shuchang Liu et al.; trains a generator-only large ranker with group-relative optimization over recommendation lists. |
+| 2025 | [A Generative Re-ranking Model for List-level Multi-objective Optimization at Taobao](https://arxiv.org/abs/2505.07197) | SIGIR | SORT-Gen; end-to-end generative reranker that builds ordered lists under list-level multi-objective targets (clicks, conversions, GMV) at Taobao. |
+| 2025 | [You Only Evaluate Once: A Tree-based Rerank Method at Meituan](https://arxiv.org/abs/2508.14420) | CIKM | YOLOR; one-stage list-level reranker that evaluates candidate permutations with a tree-based context module and permutation cache at Meituan scale. |
 | 2026 | [Denoising Neural Reranker for Recommender Systems](https://arxiv.org/abs/2509.18736) | ICLR 2026 | Shuchang Liu et al.; treats reranking as denoising retriever scores before refining the exposed item list. |
 
 ### Diversity, Coverage, and Set Quality
@@ -268,6 +306,7 @@ ranking, reranking, diversifying, or laying out the slate/page that users see.
 | 2021 | [Page-level Optimization of e-Commerce Item Recommendations](https://arxiv.org/abs/2108.05891) | RecSys | Optimizes item recommendation modules at page level in e-commerce. |
 | 2022 | [Automate Page Layout Optimization: An Offline Deep Q-learning Approach](https://www.amazon.science/publications/automate-page-layout-optimization-an-offline-deep-q-learning-approach) | Amazon Science | Offline RL approach for page layout optimization. |
 | 2023 | [A Bird's-eye View of Reranking: from List Level to Page Level](https://arxiv.org/abs/2211.09303) | WSDM | Page-level attentional re-ranking for multi-list recommendation pages. |
+| 2026 | [Design and Evaluation of Whole-Page Experience Optimization for E-commerce Search](https://arxiv.org/abs/2602.02514) | WSDM | Optimizes the whole e-commerce search page (relevance, 2D layout, visual elements) with a causal framework (DV-WPX) for page-level quality. |
 
 ### Carousel, Multi-list, Shelf, and Widget Construction
 
@@ -277,6 +316,7 @@ ranking, reranking, diversifying, or laying out the slate/page that users see.
 | 2021 | [Automatic Collection Creation and Recommendation](https://doi.org/10.1145/3460231.3478865) | RecSys | Creates and recommends collections/carousels from user-item representations. |
 | 2021 | [Optimizing the Selection of Recommendation Carousels with Quantum Computing](https://doi.org/10.1145/3460231.3478853) | RecSys | Formulates carousel selection as a combinatorial optimization problem. |
 | 2022 | [The Magic of Carousels: Single vs. Multi-List Recommender Systems](https://doi.org/10.1145/3511095.3531278) | HT | Formal and empirical analysis of why multi-list carousel interfaces can outperform single lists. |
+| 2025 | [Full-Page Recommender: A Modular Framework for Multi-Carousel Recommendations](https://dl.acm.org/doi/10.1145/3705328.3748753) | RecSys | Builds a full page of attribute-grouped carousels with soft de-duplication across rows, evaluated on Peacock streaming data. |
 
 ## Slate Feedback, Learning, and Evaluation: How to Deal with User Feedback
 
@@ -324,6 +364,8 @@ learn or evaluate a better slate policy under user-behavior assumptions.
 | 2024 | [Off-Policy Evaluation of Slate Bandit Policies via Optimizing Abstraction](https://doi.org/10.1145/3589334.3645343) | WWW | Haruka Kiyohara, Yuta Saito; learns low-dimensional slate abstractions for lower-variance slate-bandit OPE. |
 | 2024 | [Effective Off-Policy Evaluation and Learning in Contextual Combinatorial Bandits](https://doi.org/10.1145/3640457.3688099) | RecSys | Haruka Kiyohara, Yuta Saito, et al.; evaluates and learns policies that choose combinatorial action subsets. |
 | 2024 | [Long-term Off-Policy Evaluation and Learning](https://doi.org/10.1145/3589334.3645446) | WWW | Yuta Saito et al.; estimates long-term policy value from historical logs and short-term experimental outcomes. |
+| 2025 | [Addressing Personalized Bias for Unbiased Learning to Rank](https://arxiv.org/abs/2508.20798) | CIKM | Corrects personalized position/examination bias in ranked-list click feedback with a user-aware IPS estimator. |
+| 2025 | [Unidentified and Confounded? Understanding Two-Tower Models for Unbiased Learning to Rank](https://arxiv.org/abs/2506.20501) | ICTIR | Analyzes identifiability and logging-policy confounding when two-tower models interpret ranked-list click feedback. |
 
 ### Simulators, User Behavior, and Interface Evaluation
 
@@ -344,6 +386,7 @@ learn or evaluate a better slate policy under user-behavior assumptions.
 | 2023 | [How Users Ride the Carousel: Exploring the Design of Multi-List Recommender Interfaces From a User Perspective](https://doi.org/10.1145/3604915.3610638) | RecSys | User study on carousel type, length, and design in multi-list interfaces. |
 | 2023 | [Examining the User Evaluation of Multi-List Recommender Interfaces in the Context of Healthy Recipe Choices](https://doi.org/10.1145/3581930) | ACM TORS | User evaluation of multi-list recipe recommendation with personalized labels. |
 | 2024 | [Towards Simulation-Based Evaluation of Recommender Systems with Carousel Interfaces](https://doi.org/10.1145/3643709) | ACM TORS | Simulates user interaction with carousel interfaces for evaluation. |
+| 2025 | [Rethinking Click Models in Light of Carousel Interfaces: Theory-Based Categorization and Design of Click Models](https://arxiv.org/abs/2506.18548) | ICTIR | Categorizes click models across single-list, grid, and carousel surfaces and designs a new carousel click model. |
 
 ## arXiv Preprints and Non-peer-reviewed Papers
 
@@ -370,11 +413,38 @@ papers above.
 | 2025 | Slate Construction | [Enhanced Whole Page Optimization via Mixed-Grained Reward Mechanism-Adapted Language Models](https://arxiv.org/abs/2506.09084) | LLM-based whole-page optimization with mixed-grained rewards. |
 | 2025 | Slate Feedback, Learning, and Evaluation | [Riding the Carousel: The First Extensive Eye Tracking Analysis of Browsing Behavior in Carousel Recommenders](https://arxiv.org/abs/2507.10135) | Eye-tracking analysis of browsing behavior in carousel recommendation pages. |
 | 2025 | Slate Construction | [Effective Diversification of Multi-Carousel Book Recommendation](https://arxiv.org/abs/2511.14461) | Diversification methods and metrics across multiple book recommendation carousels. |
+| 2025 | Slate Construction | [HiGR: Industrial-Scale Hierarchical Generative Slate Recommendation Framework in Tencent](https://arxiv.org/abs/2512.24787) | Tencent; decouples generative slate construction into list-level planning and item-level decoding with multi-objective preference alignment. |
+| 2025 | Slate Construction | [Breaking the Likelihood Trap: Consistent Generative Recommendation with Graph-structured Model](https://arxiv.org/abs/2510.10127) | CONGRATS frames reranking as whole-sequence generation, decoding the entire exposed list with a graph-structured model for item dependencies and diversity. |
+| 2025 | Slate Construction | [An Efficient Framework for Whole-Page Reranking via Single-Modal Supervision](https://arxiv.org/abs/2510.16803) | Baidu; SMAR reranks multi-modal whole-page search results with page-level NDCG and online CTR on Baidu Apps. |
+| 2025 | Slate Construction | [RIA: A Ranking-Infused Approach for Optimized Listwise CTR Prediction](https://arxiv.org/abs/2511.21394) | Meituan ads; listwise CTR reranker with hierarchical item dependencies and position-sensitive preference learning over the whole list. |
+| 2025 | Slate Construction | [Diversity Recommendation via Causal Deconfounding of Co-purchase Relations and Counterfactual Exposure](https://arxiv.org/abs/2512.17733) | Cadence; LightGCN-based diversity-aware recommender that optimizes list-level diversity alongside accuracy via causal deconfounding. |
+| 2025 | Slate Construction | [Diversified recommendations of cultural activities with personalized determinantal point processes](https://arxiv.org/abs/2509.10392) | Personalized DPP selects a diverse subset of up to 60 items for the homepage, evaluated with offline diversity metrics and an online A/B/C CTR test. |
+| 2025 | Slate Feedback, Learning, and Evaluation | [Off-Policy Evaluation of Ranking Policies via Embedding-Space User Behavior Modeling](https://arxiv.org/abs/2506.00446) | Proposes GMIPS/MRIPS estimators with cascade behavior over ranking embeddings for large ranking action spaces. |
+| 2025 | Slate Feedback, Learning, and Evaluation | [Online Learning to Rank under Corruption: A Robust Cascading Bandits Approach](https://arxiv.org/abs/2511.03074) | Cascading-bandit OLTR that presents a ranked list and learns from click feedback robustly under adversarial corruption (click fraud). |
+| 2025 | Slate Feedback, Learning, and Evaluation | [Cascading Bandits Robust to Adversarial Corruptions](https://arxiv.org/abs/2502.08077) | Recommends a ranked list of K items and learns from cascade click feedback that is robust to adversarial corruptions. |
+| 2025 | Slate Feedback, Learning, and Evaluation | [Correcting for Position Bias in Learning to Rank: A Control Function Approach](https://arxiv.org/abs/2506.06989) | Counterfactual learning-to-rank that corrects position bias in ranked-list click feedback via a control function. |
+| 2025 | Slate Feedback, Learning, and Evaluation | [LLM-as-a-Judge: Toward World Models for Slate Recommendation Systems](https://arxiv.org/abs/2511.04541) | Uses LLMs as world models of user preference over whole slates, covering set selection, ordering, and joint selection-and-ordering. |
 | 2026 | Slate Construction | [FlashEvaluator: Expanding Search Space with Parallel Evaluation](https://arxiv.org/abs/2603.02565) | Kuaishou evaluator that compares multiple generated sequences in one forward pass and selects better ranked lists. |
 | 2026 | Slate Construction | [Dual-Rerank: Fusing Causality and Utility for Industrial Generative Reranking](https://arxiv.org/abs/2604.07420) | Kuaishou industrial reranker for whole-page utility, combining AR-to-NAR distillation with list-wise RL optimization. |
 | 2026 | Slate Feedback, Learning, and Evaluation | [Off-Policy Evaluation for Ranking Policies under Deterministic Logging Policies](https://arxiv.org/abs/2603.21485) | Yuta Saito et al.; uses click stochasticity for ranking-policy OPE when the logging policy itself is deterministic. |
 | 2026 | Slate Construction | [From Local Indices to Global Identifiers: Generative Reranking for Recommender Systems via Global Action Space](https://arxiv.org/abs/2604.25291) | Shuchang Liu et al.; reformulates listwise reranking as generation over global item identifiers and optimizes listwise utility. |
 | 2026 | Slate Construction | [UniRank: Unified List-wise Reranking via Confidence-Ordered Denoising](https://arxiv.org/abs/2605.10527) | Shuchang Liu et al.; unifies autoregressive and non-autoregressive reranking with bidirectional ordered-slate denoising. |
+| 2026 | Slate Construction | [Next-Scale Generative Reranking: A Tree-based Generative Rerank Method at Meituan](https://arxiv.org/abs/2604.05314) | Meituan; NSGR builds the recommendation list coarse-to-fine with a multi-scale evaluator guiding list construction. |
+| 2026 | Slate Construction | [One Pass, Any Order: Position-Invariant Listwise Reranking for LLM-Based Recommendation](https://arxiv.org/abs/2604.27599) | InvariRank scores an entire candidate set in one pass to produce a list while removing position/permutation bias on LLM rankings. |
+| 2026 | Slate Construction | [STCRank: Spatio-temporal Collaborative Ranking for Interactive Recommender System at Kuaishou E-shop](https://arxiv.org/abs/2601.10027) | Kuaishou E-shop; spatio-temporal collaborative ranking for an interactive multi-item recommendation surface. |
+| 2026 | Slate Construction | [Beyond Static Best-of-N: Bayesian List-wise Alignment for LLM-based Recommendation](https://arxiv.org/abs/2605.04559) | Frames recommendation as conditional list generation and directly optimizes non-differentiable list metrics (NDCG@k, ILD, group unfairness). |
+| 2026 | Slate Construction | [LLM-Assisted Reranking to Operationalize Nuanced Objectives in Recommender Systems](https://arxiv.org/abs/2606.02883) | Reranks YouTube's multi-item sidebar list via instruction-based LLM prompting and analyzes how exposure is distributed across positions. |
+| 2026 | Slate Construction | [Rich-Media Re-Ranker: A User Satisfaction-Driven LLM Re-ranking Framework for Rich-Media Search](https://arxiv.org/abs/2602.05408) | LLM reranks the whole rich-media search list with list-level principles, optimized via post-exposure user satisfaction in production. |
+| 2026 | Slate Construction | [Trading Engagement for Sustainability: Carbon-Aware Re-ranking for E-commerce Recommendations](https://arxiv.org/abs/2606.04550) | Post-hoc re-ranking that reorders BPR/NeuMF/LightGCN lists to trade engagement against carbon footprint along a Pareto frontier. |
+| 2026 | Slate Construction | [SCASRec: A Self-Correcting and Auto-Stopping Model for Generative Route List Recommendation](https://arxiv.org/abs/2602.03324) | Generates an ordered route list step-by-step with list-level coverage feedback and a learnable end-of-recommendation token for adaptive length. |
+| 2026 | Slate Construction | [Whole-Pool Setwise Reranking with Long-Context Language Models](https://arxiv.org/abs/2606.01782) | Whole-Pool Setwise / DualEnd builds a full ranked list over the entire candidate pool, picking most- and least-relevant items per call. |
+| 2026 | Slate Construction | [UniPinRec: Unifying Generative Retrieval and Ranking at Pinterest Scale](https://arxiv.org/abs/2606.00422) | Pinterest; joint generative retrieval and ranking trained on impression slates for Home Feed and Search grid surfaces. |
+| 2026 | Slate Construction | [Constraint-Aware Generative Re-ranking for Multi-Objective Optimization in Advertising Feeds](https://arxiv.org/abs/2603.04227) | Bilibili; autoregressive generative reranker that builds the whole ad feed under constraints, balancing revenue and user experience. |
+| 2026 | Slate Construction | [A Cascaded Generative Approach for e-Commerce Recommendations](https://arxiv.org/abs/2605.11118) | Builds whole storefront pages by generating placement-level themes plus per-placement keywords for retrieval, fused with ranking models. |
+| 2026 | Slate Feedback, Learning, and Evaluation | [Additive Control Variates Dominate Self-Normalisation in Off-Policy Evaluation](https://arxiv.org/abs/2602.14914) | Jeunen and Gupta; shows additive control variates outperform self-normalisation (SNIPS) for ranking and recommendation OPE. |
+| 2026 | Slate Feedback, Learning, and Evaluation | [From Latent to Observable Position-Based Click Models in Carousel Interfaces](https://arxiv.org/abs/2602.16541) | Position-based click models for carousels, including an Observed Examination PBM informed by eye-tracking browsing patterns. |
+| 2026 | Slate Construction | [Adaptive Quality-Diversity Trade-offs for Large-Scale Batch Recommendation](https://arxiv.org/abs/2602.02024) | B-DivRec; DPP-based set selection that adapts the relevance-diversity balance using post-exposure user feedback. |
+| 2026 | Slate Feedback, Learning, and Evaluation | [The Diversity Paradox revisited: Systemic Effects of Feedback Loops in Recommender Systems](https://arxiv.org/abs/2602.16315) | Feedback-loop simulation where recommenders return top-k lists and learn from implicit consumption to study long-term diversity dynamics. |
 
 ## Explicitly Out of Scope
 

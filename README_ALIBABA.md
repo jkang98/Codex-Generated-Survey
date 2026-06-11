@@ -24,6 +24,8 @@ Alibaba ranking / CTR papers
 |   |-- DMIN: multiple latent interests for CTR
 |   |-- ETA-Net: end-to-end efficient long-behavior retrieval
 |   |-- ULIM: thousand-scale long-behavior retrieval for Taobao recommendation
+|   |-- MUSE / MIM: multimodal search-based & content-interest long-behavior modeling
+|   |-- HeMix: query-mixed multi-interest CTR with heterogeneous interaction and scaling
 |-- Feature, domain, calibration, and parameter adaptation
 |   |-- CAN: explicit feature co-action
 |   |-- STAR / AdaSparse / HC^2 / Maria: multi-domain and multi-scenario CTR
@@ -33,12 +35,15 @@ Alibaba ranking / CTR papers
 |   |-- CLID: calibration-compatible listwise distillation
 |   |-- CRB: coupled position/ranking-bias mitigation
 |   |-- Taobao multimodal ads / EST / LoopCTR / LUM: multimodal and scalable CTR modeling
+|   |-- MOON / Scaling Transformers: multimodal representation and generative-pretraining CTR scaling
 |-- CVR, delayed feedback, and post-click objectives
 |   |-- ESMM: entire-space multitask CVR estimation
 |   |-- ESDF / DEFER / DEFUSE: false negatives and delayed conversion
 |   |-- AutoHERI / HDR / ECAD: post-click, historical data reuse, and attribution delay
 |   |-- MAL / MAC: multi-attribution CVR learning and benchmark
 |   |-- TESLA / CASCADE / READER / TRACE: NetCVR and GMV with delayed feedback
+|   |-- TranSUN / ChoirRec: retransformation-bias-free regression ranking and LLM user grouping for CVR
+|   |-- Video LTV: long-term value prediction in ranking
 |-- Ranking, LTR, and page optimization
 |   |-- CLOES: cascade ranking for e-commerce search efficiency
 |   |-- RL to Rank: search-session MDP for Taobao ranking
@@ -49,6 +54,10 @@ Alibaba ranking / CTR papers
 |   |-- PRECTR: unified search relevance and CTR prediction
 |   |-- SERAL / KARMA / RecGPT-Mobile: LLM-enhanced Taobao search and feed recommendation
 |   |-- Bid2X: adjacent foundation model for online advertising bidding dynamics
+|   |-- TARQ / BAR / AIF: pre-ranking target attention, bidding-aware retrieval, async inference
+|   |-- AliBoostV2: CTR-growth balanced ecological boosting for cold items
+|   |-- GUIDE / LLM-Auction: generative auto-bidding and LLM-native ad auction
+|   |-- LLM search & generative ranking: RecGPT / RecGPT-V2 / URM / SIGMA / RankGR / NEZHA / DSIRM / LEAPS / AIGQ / TaoSR-AGRL
 ```
 
 ## Papers
@@ -103,6 +112,22 @@ Alibaba ranking / CTR papers
 | 2025 | [See Beyond a Single View: Multi-Attribution Learning Leads to Better Conversion Rate Prediction](https://arxiv.org/abs/2508.15217) | CIKM / arXiv | CVR, multi-attribution learning | MAL 指出 CVR label 本身受 attribution mechanism 影响：只用 Last-Click 或单一归因会丢掉其他触点信号，因此用多归因视角联合学习更稳定的转化意图。 |
 | 2025 | [Bid2X: Revealing Dynamics of Bidding Environment in Online Advertising from A Foundation Model Lens](https://arxiv.org/abs/2510.23410) | KDD | Online advertising, bidding foundation model | Bid2X 不直接做 CTR scorer，但和阿里广告排序/竞价生态相邻：用 foundation model 统一建模不同 bidding scenario 下 bid 到预算消耗、GMV、PV 等效果的映射，服务自动出价环境理解。 |
 | 2025 | [Bursting Filter Bubble: Enhancing Serendipity Recommendations with Aligned Large Language Models](https://arxiv.org/abs/2502.13539) | KDD | Serendipity recommendation, LLM alignment | SERAL 面向 Taobao App 首页 “Guess What You Like” 的 filter bubble 问题：用用户认知画像压缩长行为，再对齐 LLM 的 serendipity 判断，并通过 nearline adaptation 接入工业推荐链路。 |
+| 2025 | [MOON Embedding: Multimodal Representation Learning for E-commerce Search Advertising](https://arxiv.org/abs/2511.11305) | arXiv | CTR, multimodal representation | MOON 是阿里妈妈搜索广告团队的多模态表征学习工作，已全面部署在淘宝搜索广告系统的召回、相关性和排序链路；通过多模态表征直接驱动 CTR 预估，论文报告线上 CTR 提升约 20%。 |
+| 2025 | [RAIR: A Rule-Aware Benchmark Uniting Challenging Long-Tail and Visual Salience Subset for E-commerce Relevance Assessment](https://arxiv.org/abs/2512.24943) | arXiv | Search relevance benchmark, multimodal, LLM/VLM | RAIR 是 Taobao & Tmall Group 发布的中文电商搜索相关性 benchmark，含通用、长尾难例和视觉显著性三个子集，用于评测 LLM/VLM（含 GPT-5）在 query-商品相关性判断上的能力，服务多模态相关性/排序研究。 |
+| 2025 | [Equip Pre-ranking with Target Attention by Residual Quantization](https://arxiv.org/abs/2509.16931) | arXiv | Pre-ranking, target attention, cascade consistency | TARQ 用残差量化把 target attention 引入延迟敏感的粗排阶段，让粗排打分器也能用上精排式的目标感知交互，从而提升粗精排一致性；来自淘宝团队并已在服务数千万 DAU 的生产系统部署。 |
+| 2025 | [Bidding-Aware Retrieval for Multi-Stage Consistency in Online Advertising](https://arxiv.org/abs/2508.05206) | arXiv | Retrieval-to-ranking, cascade consistency, online ads | BAR 针对召回与排序级联不一致问题，把出价信号通过单调性约束学习和多任务蒸馏注入检索阶段，让召回结果更贴近下游 ECPM 排序；来自阿里妈妈展示广告并已在阿里广告平台部署。 |
+| 2025 | [ChoirRec: Semantic User Grouping via LLMs for Conversion Rate Prediction of Low-Activity Users](https://arxiv.org/abs/2510.09393) | arXiv | CVR, LLM-based user grouping, low-activity users | ChoirRec 用 LLM 做语义化用户分组，借助高活用户群体信息缓解低活用户行为稀疏导致的 CVR 预估困难；来自 Alibaba 并已在淘宝部署。 |
+| 2025 | [TranSUN: A Preemptive Paradigm to Eradicate Retransformation Bias Intrinsically from Regression Models in Recommender Systems](https://arxiv.org/abs/2505.13881) | NeurIPS | Regression debiasing, ranking calibration | TranSUN 从根源上消除回归类排序模型（如 GMV/时长预估）训练时对数变换带来的 retransformation bias，是一种预防式范式；已在淘宝首页"猜你喜欢"的商品与短视频推荐排序中部署。 |
+| 2025 | [MUSE: A Simple Yet Effective Multimodal Search-Based Framework for Lifelong User Interest Modeling](https://arxiv.org/abs/2512.07216) | arXiv | CTR, long sequence, multimodal search-based | MUSE 把 SIM 式 GSU/ESU 检索范式扩展到 10 万级多模态长行为序列，用 SimTier 和语义感知 target attention 从超长历史里检索相关兴趣证据；来自阿里妈妈展示广告并已在淘宝展示广告系统部署。 |
+| 2025 | [MIM: Multi-modal Content Interest Modeling Paradigm for User Behavior Modeling](https://arxiv.org/abs/2502.00321) | arXiv | CTR, multimodal content interest, user behavior | MIM 提出多模态内容兴趣建模范式，把多模态内容信号接进用户行为序列做 CTR 预估；作者包含阿里妈妈/淘宝研究者并已在淘宝部署。 |
+| 2025 | [AIF: Asynchronous Inference Framework for Cost-Effective Pre-Ranking](https://arxiv.org/abs/2511.12934) | arXiv | Pre-ranking, serving efficiency, ad CTR | AIF 是 Taobao & Tmall Group 的粗排异步推理框架，通过解耦计算降低粗排成本；自 2023 年 10 月起在淘宝展示广告粗排阶段部署，报告 CTR +8.72%、RPM +5.80%。 |
+| 2025 | [RecGPT Technical Report](https://arxiv.org/abs/2507.22879) | arXiv | LLM-enhanced recommendation, intent mining, retrieval | RecGPT 是 Taobao 团队的 LLM 增强推荐系统技术报告，覆盖用户意图挖掘、物品检索和解释生成；已在淘宝 App 部署，是 RecGPT-Mobile/V2 的主干工作。 |
+| 2025 | [RecGPT-V2 Technical Report](https://arxiv.org/abs/2512.14503) | arXiv | LLM-enhanced ranking/recommendation | RecGPT-V2 延续 RecGPT 的 LLM 增强推荐/排序路线，并在淘宝首页"猜你喜欢"feed 做了 A/B；报告 CTR +2.98%、IPV +3.71%、TV +2.19%、NER +11.46% 等线上排序收益。 |
+| 2025 | [Scaling Transformers for Discriminative Recommendation via Generative Pretraining](https://arxiv.org/abs/2506.03699) | KDD | CTR/CVR, scaling law, generative pretraining | 这篇用生成式预训练来 scale 判别式推荐的 Transformer，面向工业推荐排序阶段的 CTR/CVR 预估；来自 Alibaba 并在大规模电商平台做了线上 A/B，属于 scaling-law 排序方向。 |
+| 2025 | [Large Language Model as Universal Retriever in Industrial-Scale Recommender System](https://arxiv.org/abs/2502.03041) | arXiv | LLM universal retrieval, multi-objective, online ads | URM 用 LLM 做统一的多目标、多场景（含搜索）生成式检索，直接影响广告排序/CTR 目标；来自 Taobao & Tmall Group 并在阿里广告平台 A/B，报告广告收入提升约 3%。 |
+| 2025 | [TaoSR-AGRL: Adaptive Guided Reinforcement Learning Framework for E-commerce Search Relevance](https://arxiv.org/abs/2510.08048) | WWW | Search relevance, RL, LLM-enhanced | TaoSR-AGRL 用自适应引导式强化学习框架做 LLM 增强的电商搜索相关性与排序；来自淘宝并已部署，属于阿里体系近期 LLM 化搜索/排序方向。 |
+| 2025 | [LLM-Auction: Generative Auction towards LLM-Native Advertising](https://arxiv.org/abs/2512.10551) | arXiv | Generative auction, ad allocation, LLM-native ads | LLM-Auction 提出面向 LLM 原生广告的学习型生成式拍卖机制，用 Iterative Reward-Preference Optimization 在广告主价值与用户体验间做生成式广告分配；来自 Taobao & Tmall Group，使用真实淘宝广告。 |
+| 2025 | [Reinforced Preference Optimization for Recommendation](https://arxiv.org/abs/2510.12211) | arXiv | Generative recommendation, RL preference optimization | 这篇用强化学习（RLVR/GRPO）优化 LLM 生成式推荐的排序偏好；来自 Taobao & Tmall Group 与 NUS，属于 LLM 化排序与偏好优化方向。 |
 | 2026 | [Modeling Cascaded Delay Feedback for Online Net Conversion Rate Prediction: Benchmark, Insights and Solutions](https://arxiv.org/abs/2601.19965) | WWW | NetCVR, delayed feedback, refund-aware ranking | TESLA/CASCADE 把 CVR 扩展到 NetCVR：点击后购买有延迟，购买后退款也有延迟，而且两段延迟方向相反；论文给出 Taobao App 的 CASCADE 数据集、级联 CVR/refund-rate 建模、stage-wise debiasing 和 delay-time-aware ranking loss。 |
 | 2026 | [Delayed Feedback Modeling for Post-Click Gross Merchandise Volume Prediction: Benchmark, Insights and Approaches](https://arxiv.org/abs/2601.20307) | WWW | Post-click GMV, delayed feedback | READER/TRACE 是 TESLA 的姊妹线：目标从概率型 CVR 变成连续型 post-click GMV，并处理一次点击后多次购买、label 未完全到达时的 under-estimation 和 repurchase 分布差异。 |
 | 2026 | [MAC: A Conversion Rate Prediction Benchmark Featuring Labels Under Multiple Attribution Mechanisms](https://arxiv.org/abs/2603.02184) | arXiv | CVR, multi-attribution benchmark, PyMAL | MAC 是 MAL 方向的公开 benchmark：从 Taobao advertising 系统抽取多归因标签数据，并发布 PyMAL baseline library；论文还提出 MoAE，用 asymmetric experts 更充分地学习和迁移多归因知识。 |
@@ -112,6 +137,18 @@ Alibaba ranking / CTR papers
 | 2026 | [LoopCTR: Unlocking the Loop Scaling Power for Click-Through Rate Prediction](https://arxiv.org/abs/2604.19550) | arXiv | CTR, loop scaling, efficient inference | LoopCTR 是另一条 CTR scaling 路线：不靠简单堆参数，而是在训练时循环复用共享层增加 compute，用 process supervision 把多 loop 收益压进共享参数，最后用 train-multi-loop / infer-zero-loop 保持线上推理成本。 |
 | 2026 | [KARMA: Knowledge-Action Regularized Multimodal Alignment for Personalized Search at Taobao](https://arxiv.org/abs/2603.22779) | arXiv | Personalized search, LLM/multimodal alignment | KARMA 关注 Taobao 个性化搜索里的 Knowledge-Action Gap：直接用行为目标 fine-tune LLM 会损伤语义泛化，因此用语义重建作为 train-only regularizer，让 next-interest embedding 同时服务 recall/pre-rank/rank 并保持 semantic decodability。 |
 | 2026 | [RecGPT-Mobile: On-Device Large Language Models for User Intent Understanding in Taobao Feed Recommendation](https://arxiv.org/abs/2605.04726) | arXiv | Feed recommendation, on-device LLM, intent understanding | RecGPT-Mobile 把轻量 LLM 部署到移动端做用户实时意图理解/next-query prediction，让 feed 推荐能更快响应用户近期行为变化；它更像下一代 ranking feature / intent layer，而不是传统 CTR scorer。 |
+| 2026 | [DSIRM: Learning Query-Bridged Discrete Semantic Identifiers for E-commerce Relevance Modeling](https://arxiv.org/abs/2606.04374) | arXiv | Search relevance, semantic ID, LLM-enhanced | DSIRM 把 query 作为桥梁学习离散语义 ID，用 LLM 增强电商搜索相关性建模，直接服务于 Tmall 搜索的排序和 CTR/CVR 目标；来自 Taobao & Tmall Group 并已在天猫部署。 |
+| 2026 | [LEAPS: An LLM-Empowered Adaptive Plugin in Taobao AI Search](https://arxiv.org/abs/2601.05513) | arXiv | Search query understanding, relevance, LLM-enhanced | LEAPS 是 Taobao & Tmall Group 的 LLM 自适应插件，用 Query Expander 做查询理解扩展、用 Relevance Verifier 做相关性排序/过滤；自 2025 年 8 月起全面部署在淘宝 AI 搜索。 |
+| 2026 | [SIGMA: A Semantic-Grounded Instruction-Driven Generative Multi-Task Recommender at AliExpress](https://arxiv.org/abs/2602.22913) | SIGIR Industry | Generative multi-task recommendation, LLM-enhanced | SIGMA 是 AliExpress 部署的语义接地、指令驱动的生成式多任务推荐器，用 LLM 增强统一建模多个排序/推荐目标；属于阿里体系近期 LLM 化排序方向。 |
+| 2026 | [RankGR: Rank-Enhanced Generative Retrieval with Listwise Direct Preference Optimization in Recommendation](https://arxiv.org/abs/2602.08575) | arXiv | Generative retrieval, listwise LTR, recommendation | RankGR 给生成式检索补上 listwise LTR 目标（LDPO）和精排打分阶段，让生成召回直接对齐排序质量；来自浙江大学与 Alibaba 并在淘宝部署。 |
+| 2026 | [Efficient Generative Retrieval for E-commerce Search with Semantic Cluster IDs and Expert-Guided RL](https://arxiv.org/abs/2605.14434) | arXiv | Generative retrieval, ranking-aligned RL, search | 这篇用语义聚类 ID 和专家引导强化学习（EG-GRPO）做高效生成式检索，并加入排序对齐的精炼训练阶段，让召回直接服务下游排序目标；部署于天猫，生成式召回贡献超 50% 曝光，报告 GMV/CVR 线上提升。 |
+| 2026 | [Query-Mixed Interest Extraction and Heterogeneous Interaction: A Scalable CTR Model for Industrial Recommender Systems](https://arxiv.org/abs/2602.09387) | arXiv | CTR, multi-interest, scaling law | HeMix 用 Query-Mixed Interest Extraction 在全局与实时行为序列上做自适应序列 token 化，再配 HeteroMixer 交互模块，并强调排序模型的 scaling-law 行为；部署于阿里全资子公司高德（AMAP），报告 GMV/CTR/CVR 线上提升。 |
+| 2026 | [Generative Auto-Bidding with Unified Modeling and Exploration](https://arxiv.org/abs/2605.19457) | SIGIR | Auto-bidding, generative modeling, online ads | GUIDE 是 Taobao & Tmall Group 的生成式自动出价框架，统一建模并加入探索机制做广告投放优化；已在淘宝广告平台线上部署，属于阿里广告竞价/优化相邻方向。 |
+| 2026 | [NEZHA: A Zero-sacrifice and Hyperspeed Decoding Architecture for Generative Recommendations](https://arxiv.org/abs/2511.18793) | WWW | Generative recommendation, decoding efficiency, ad CTR | NEZHA 用类似 speculative decoding 的架构在不损效果的前提下加速 LLM 生成式推荐的解码；自 2025 年 10 月起部署在淘宝搜索广告的候选生成阶段，直接服务广告排序/CTR 链路。 |
+| 2026 | [Bridging Sequential and Contextual Features with a Dual-View of Fine-grained Core-Behaviors and Global Interest-Distribution](https://arxiv.org/abs/2603.12578) | arXiv | CTR, long sequence, sequential-contextual fusion | 这篇用细粒度核心行为和全局兴趣分布的双视角，把长用户行为序列与上下文特征桥接起来做 CTR 预估；来自 Alibaba 并在大规模电商平台经线上 A/B 验证。 |
+| 2026 | [AIGQ: An End-to-End Hybrid Generative Architecture for E-commerce Query Recommendation](https://arxiv.org/abs/2603.19710) | arXiv | Generative query recommendation, search, LLM-enhanced | AIGQ 是端到端混合生成式架构，做电商搜索前的 query 推荐；部署于淘宝 HintQ 场景，来自 Taobao & Tmall Group，属于 LLM 化搜索/生成式推荐方向。 |
+| 2026 | [A Long-term Value Prediction Framework In Video Ranking](https://arxiv.org/abs/2602.17058) | WWW | LTV, multi-objective ranking, post-click | 这篇做视频排序里的长期价值（LTV）建模，含多目标与点击后归因组件；来自淘宝并已部署在淘宝排序系统，直接对应排序阶段的 LTV / 多目标 LTR / 后链路目标。 |
+| 2026 | [AliBoostV2: CTR-Growth Balanced Boosting Framework in Billion-Scale Recommendation Platform](https://dl.acm.org/doi/10.1145/3774904.3792800) | WWW | Multi-objective controllable ranking, cold items | AliBoostV2 延续 AliBoost 的生态加权排序，在十亿级推荐平台上做 CTR 与增长（冷启动商品后链路 GMV/growth）平衡的可控 boosting；来自淘宝并已部署。 |
 
 ## Main Threads
 
