@@ -91,8 +91,6 @@ Slate recommendation
 |   |   |-- RIA: A Ranking-Infused Approach for Optimized Listwise CTR Prediction
 |   |   |-- You Only Evaluate Once: A Tree-based Rerank Method at Meituan
 |   |-- Diversity, coverage, and set quality
-|   |   |-- Improving Recommendation Lists Through Topic Diversification
-|   |   |-- Determinantal Point Processes for Machine Learning
 |   |   |-- Practical Diversified Recommendations on YouTube with Determinantal Point Processes
 |   |   |-- Fast Greedy MAP Inference for Determinantal Point Process to Improve Recommendation Diversity
 |   |   |-- Trading Engagement for Sustainability: Carbon-Aware Re-ranking for E-commerce Recommendations
@@ -100,9 +98,6 @@ Slate recommendation
 |   |   |-- Diversity Recommendation via Causal Deconfounding of Co-purchase Relations and Counterfactual Exposure
 |   |   |-- Diversified recommendations of cultural activities with personalized determinantal point processes
 |   |-- Ranked-list feedback, click models, bandits, and OPE
-|   |   |-- Learning Diverse Rankings with Multi-Armed Bandits
-|   |   |-- Ranked Bandits in Metric Spaces: Learning Diverse Rankings over Large Document Collections
-|   |   |-- Contextual Combinatorial Bandit and its Application on Diversified Online Recommendation
 |   |   |-- Bandit Learning for Diversified Interactive Recommendation
 |   |   |-- Cascading Bandits: Learning to Rank in the Cascade Model
 |   |   |-- Combinatorial Cascading Bandits
@@ -143,9 +138,6 @@ Slate recommendation
 |   |   |-- Unidentified and Confounded? Understanding Two-Tower Models for Unbiased Learning to Rank
 |-- Layout aware
 |   |-- Grid and 2D presentation
-|   |   |-- Eye-tracking Study of User Behavior in Recommender Interfaces
-|   |   |-- The Effects of Recommendations' Presentation on Persuasion and Satisfaction in a Movie Recommender System
-|   |   |-- Understanding Choice Overload in Recommender Systems
 |   |   |-- Personalizing User Interfaces for Improving Quality of Experience in VoD Recommender Systems
 |   |   |-- Toward User Engagement Optimization in 2D Presentation
 |   |   |-- Controlling Personalized Recommendations in Two Dimensions with a Carousel-Based Interface
@@ -176,7 +168,6 @@ Slate recommendation
 |   |   |-- From Latent to Observable Position-Based Click Models in Carousel Interfaces
 |   |   |-- UniPinRec: Unifying Generative Retrieval and Ranking at Pinterest Scale
 |   |-- Whole page, page modules, and landing pages
-|   |   |-- Whole Page Optimization: How Page Elements Interact with the Position Auction
 |   |   |-- Beyond Ranking: Optimizing Whole-Page Presentation
 |   |   |-- Whole-Page Optimization and Submodular Welfare Maximization with Online Bidders
 |   |   |-- Efficient Ordered Combinatorial Semi-Bandits for Whole-Page Recommendation
@@ -216,7 +207,6 @@ metadata, source page, or row notes.
 | Csaba Szepesvari | 4+ | Cascading bandits, stochastic ranking, and partial-feedback learning to rank. |
 | James McInerney | 3+ | Playlist, shelf, and slate counterfactual evaluation in music recommendation. |
 | Shuai Li | 2+ | Contextual combinatorial bandits and click-model offline evaluation for rankings. |
-| Thorsten Joachims | 2+ | Ranked bandits and click-feedback learning to rank. |
 
 ### Institution Coverage
 
@@ -225,9 +215,8 @@ metadata, source page, or row notes.
 | Kuaishou | 18+ | Industrial generative reranking, large rankers, request-level RL, retention optimization, simulation, and landing-page navigation. |
 | Google / YouTube | 5+ | Slate generation, top-k off-policy correction, long-term satisfaction ranking, and production-scale diversification. |
 | Spotify | 3+ | Playlist recommendation, explainable shelves, carousel bandits, and slate counterfactual evaluation. |
-| Microsoft / Microsoft Research | 3+ | Whole-page optimization, ads/search page allocation, and combinatorial categorized bandits. |
+| Microsoft / Microsoft Research | 2+ | Whole-page ad allocation (submodular welfare) and combinatorial categorized bandits. |
 | Amazon / Amazon Science | 2+ | Homepage/widget optimization and offline RL for page layout. |
-| Cornell University | 2+ | Early ranked-bandit and click-feedback ranking formulations. |
 | Yale / Tokyo Institute of Technology / Hanjuku-kaso / ZOZO | 5+ | Ranking and slate OPE with cascade, diverse, deterministic, and combinatorial behavior assumptions. |
 | Netflix | 1+ | Multi-row homepage recommender systems. |
 
@@ -287,8 +276,6 @@ ranking, reranking, diversifying, or laying out the slate/page that users see.
 
 | Year | Paper | Venue | Main idea |
 | --- | --- | --- | --- |
-| 2005 | [Improving Recommendation Lists Through Topic Diversification](https://doi.org/10.1145/1060745.1060754) | WWW | Early work on diversifying the final recommendation list rather than optimizing items independently. |
-| 2012 | [Determinantal Point Processes for Machine Learning](https://arxiv.org/abs/1207.6083) | Foundations and Trends in ML | Core DPP reference used by many diverse slate/list recommenders. |
 | 2018 | [Practical Diversified Recommendations on YouTube with Determinantal Point Processes](https://doi.org/10.1145/3269206.3272018) | CIKM | Production-scale DPP diversification for recommendation lists. |
 | 2018 | [Fast Greedy MAP Inference for Determinantal Point Process to Improve Recommendation Diversity](https://arxiv.org/abs/1709.05135) | NeurIPS | Scalable DPP inference for diversified top-k recommendation. |
 
@@ -296,7 +283,6 @@ ranking, reranking, diversifying, or laying out the slate/page that users see.
 
 | Year | Paper | Venue | Main idea |
 | --- | --- | --- | --- |
-| 2014 | [Whole Page Optimization: How Page Elements Interact with the Position Auction](https://www.microsoft.com/en-us/research/publication/whole-page-optimization-how-page-elements-interact-with-the-position-auction/) | ACM EC | Search/ads paper showing that whole-page elements interact with ad clicks and revenue. |
 | 2016 | [Beyond Ranking: Optimizing Whole-Page Presentation](https://doi.org/10.1145/2835776.2835824) | WSDM | Optimizes heterogeneous whole-page presentation rather than a single ranked list. |
 | 2016 | [Whole-Page Optimization and Submodular Welfare Maximization with Online Bidders](https://doi.org/10.1145/2892563) | ACM TEAC | Whole-page ad allocation under slot and diversity constraints. |
 | 2018 | [Deep Reinforcement Learning for Page-wise Recommendations](https://arxiv.org/abs/1805.02343) | RecSys | DeepPage jointly selects complementary items and a 2D page display strategy. |
@@ -333,9 +319,6 @@ learn or evaluate a better slate policy under user-behavior assumptions.
 
 | Year | Paper | Venue | Main idea |
 | --- | --- | --- | --- |
-| 2008 | [Learning Diverse Rankings with Multi-Armed Bandits](https://doi.org/10.1145/1390156.1390255) | ICML | Cornell ranked-bandits paper; decomposes diverse ranking into per-position bandits using click/abandonment feedback. |
-| 2013 | [Ranked Bandits in Metric Spaces: Learning Diverse Rankings over Large Document Collections](https://jmlr.org/papers/v14/slivkins13a.html) | JMLR | Extends ranked bandits with metric structure to scale diverse ranking over large document collections. |
-| 2014 | [Contextual Combinatorial Bandit and its Application on Diversified Online Recommendation](https://doi.org/10.1137/1.9781611973440.53) | SDM | Contextual bandit formulation for selecting a diversified set of recommendations. |
 | 2015 | [Cascading Bandits: Learning to Rank in the Cascade Model](https://proceedings.mlr.press/v37/kveton15.html) | ICML | Assumes users scan a ranked list top-down and click the first attractive item, yielding partial feedback for slate learning. |
 | 2015 | [Combinatorial Cascading Bandits](https://proceedings.neurips.cc/paper_files/paper/2015/hash/1f50893f80d6830d62765ffad7721742-Abstract.html) | NeurIPS | Generalizes cascading feedback to constrained tuple/slate selection with nonlinear rewards and partial observability. |
 | 2016 | [Cascading Bandits for Large-Scale Recommendation Problems](https://auai.org/uai2016/proceedings/papers/96.pdf) | UAI | Adds feature-based generalization to cascade bandits so top-k recommendation can scale to large item sets. |
@@ -371,9 +354,6 @@ learn or evaluate a better slate policy under user-behavior assumptions.
 
 | Year | Paper | Venue | Main idea |
 | --- | --- | --- | --- |
-| 2010 | [Eye-tracking Study of User Behavior in Recommender Interfaces](https://doi.org/10.1007/978-3-642-13470-8_35) | UMAP | Eye-tracking study of how users inspect recommendation interfaces. |
-| 2010 | [The Effects of Recommendations' Presentation on Persuasion and Satisfaction in a Movie Recommender System](https://doi.org/10.1007/s00530-010-0190-0) | Multimedia Systems | Compares presentation choices for movie recommendation interfaces. |
-| 2010 | [Understanding Choice Overload in Recommender Systems](https://doi.org/10.1145/1864708.1864724) | RecSys | Studies how list length and diversity affect satisfaction and decision difficulty. |
 | 2016 | [Using Navigation to Improve Recommendations in Real-Time](https://doi.org/10.1145/2959100.2959174) | RecSys | Uses navigation behavior to update recommendations in carousel-like production surfaces. |
 | 2016 | [Personalizing User Interfaces for Improving Quality of Experience in VoD Recommender Systems](https://doi.org/10.1109/QoMEX.2016.7498940) | QoMEX | Personalizes VoD recommender UI presentation. |
 | 2021 | [Controlling Personalized Recommendations in Two Dimensions with a Carousel-Based Interface](https://ceur-ws.org/Vol-2948/short3.pdf) | IntRS | Lets users control recommendation topics in a two-dimensional carousel interface. |
