@@ -235,8 +235,8 @@ metadata, source page, or row notes.
 
 ## Main Threads
 
-The taxonomy and tree above are indexes; this section is the synthesis. Six arcs
-run through the collection, and reading the survey along them is often more
+The taxonomy and tree above are indexes; this section is the synthesis. Seven
+arcs run through the collection, and reading the survey along them is often more
 informative than reading it table by table.
 
 ### 1. From greedy pointwise ranking to whole-slate generation
@@ -313,6 +313,37 @@ eye tracking and principled click-model design; and (iii) industrial-scale
 generative reranking deployed across Kuaishou, Meituan, Taobao, Tencent, Pinterest,
 Bilibili, and Baidu. Taken together, the field is shifting from "score, then sort"
 toward "generate, evaluate, and present the whole surface."
+
+### 7. The evaluation gap: whole-slate generation on exposure-blind metrics
+
+A methodological fault line runs between this survey's two halves. The
+construction papers generate ever-more-expressive slates, yet almost none
+evaluate them with the unbiased machinery built in the feedback-and-evaluation
+branch. Because a freshly generated permutation was never logged, three offline
+workarounds dominate, and each treats exposure bias differently. Simulator
+rollouts (List-CVAE, 2018; Seq2Slate, 2018; Generative Slate Recommendation with
+RL, 2023; GFN4Rec, 2023) bake position and examination bias into a hand-built or
+learned response model and score generated slates inside it — bias is modeled as
+environment, not corrected, and the simulator is often trained on the same logs
+as the policy it judges. Learned list-wise evaluators (PRS, 2021; GRN, 2021;
+PIER, 2023; GoalRank, 2025) are position- and context-aware but inherit the
+logging policy's exposure bias wholesale, and frequently define their own "best
+permutation" as ground truth, making the offline judge circular. The
+now-dominant recover-the-logged-list metrics — Recall@k and leave-N-out NDCG/HR
+(NAR4Rec, 2024; HiGR, 2025; Breaking the Likelihood Trap, 2025; Denoising Neural
+Reranker, 2026) — are the most exposed of all: they reward reproducing what the
+previous system chose to show, inheriting the exposure-blind, sampled-metric
+convention of pure sequential recommenders (SASRec, GRU4Rec, BERT4Rec). The real
+arbiter is therefore the online A/B test, where exposure happens for real —
+SORT-Gen (2025) drops offline metrics altogether. Yet the antidote already lives
+in this survey: ranking-metric debiasing (Doubly Robust Estimator for Ranking
+Metrics, 2020), slate and cascade OPE (Off-policy Evaluation for Slate
+Recommendation, 2017; the Kiyohara line), and large-action-space ranking OPE
+(embedding-space user-behavior modeling, 2025) are exactly the tools for scoring
+counterfactual permutations; they are simply rarely adopted on the construction
+side. Benchmarking generative rerankers against a debiased offline estimator —
+instead of against the slate the previous policy happened to log — is among the
+clearest open problems the collection exposes.
 
 ## Slate Construction: What to Recommend
 
